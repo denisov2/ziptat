@@ -18,6 +18,7 @@ use yii\helpers\Html;
         <div class="navbar-custom-menu">
 
             <ul class="nav navbar-nav">
+                <?= \backend\widgets\LanguageSelector::widget() ?>
 
                 <!-- Messages: style can be found in dropdown.less-->
                 <li class="dropdown messages-menu">

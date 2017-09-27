@@ -9,6 +9,7 @@ use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use frontend\assets\AppAsset;
 use common\widgets\Alert;
+use \frontend\widgets\LanguageSelector;
 
 AppAsset::register($this);
 ?>
@@ -60,7 +61,11 @@ AppAsset::register($this);
     NavBar::end();
     ?>
 
+
     <div class="container">
+
+        <?= LanguageSelector::widget() ?>
+
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>

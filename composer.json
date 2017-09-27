@@ -23,7 +23,8 @@
         "kartik-v/yii2-widget-select2": "*",
         "kartik-v/yii2-widgets":"*",
         "yiisoft/yii2-imagine": "~2.1.0",
-        "2amigos/yii2-usuario": "~1.0"
+        "2amigos/yii2-usuario": "~1.0",
+        "codemix/yii2-localeurls": "*"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
