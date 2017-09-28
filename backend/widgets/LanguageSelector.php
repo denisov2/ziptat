@@ -80,8 +80,8 @@ class LanguageSelector extends Widget
         if (self::$_labels === null) {
             self::$_labels = [
 
-                'ru' => Yii::t('common', 'Rus'),
-                'en' => Yii::t('common', 'Eng'),
+                'ru' => Yii::t('common', 'Русский'),
+                'en' => Yii::t('common', 'English'),
             ];
         }
 

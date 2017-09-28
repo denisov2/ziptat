@@ -30,11 +30,21 @@
             [
                 'options' => ['class' => 'sidebar-menu'],
                 'items' => [
-                    ['label' => 'Menu Yii2', 'options' => ['class' => 'header']],
-                    ['label' => 'Gii', 'icon' => 'file-code-o', 'url' => ['/gii']],
-                    ['label' => 'Users', 'icon' => 'file-code-o', 'url' => ['/user/admin']],
-                    ['label' => 'Debug', 'icon' => 'dashboard', 'url' => ['/debug']],
+                    ['label' =>  Yii::t('common', 'Menu'), 'options' => ['class' => 'header']],
+
+                    ['label' => Yii::t('common', 'Users'), 'icon' => 'circle-o', 'url' => ['/user/admin'],],
+                    ['label' => Yii::t('common', 'Labels'), 'icon' => 'circle-o', 'url' => ['/labels'],],
+                    ['label' => Yii::t('common', 'Order'), 'icon' => 'circle-o', 'url' => ['/orders'],],
+                    ['label' => Yii::t('common', 'News'), 'icon' => 'circle-o', 'url' => ['/news'],],
+                    ['label' => Yii::t('common', 'Articles'), 'icon' => 'circle-o', 'url' => ['/articles'],],
+                    ['label' => Yii::t('common', 'Top Menu'), 'icon' => 'circle-o', 'url' => ['/menu'],],
+                    ['label' => Yii::t('common', 'Image editor'), 'icon' => 'circle-o', 'url' => ['/editor'],],
+                    ['label' => Yii::t('common', 'Mailing lists'), 'icon' => 'circle-o', 'url' => ['/mailing'],],
+                    ['label' => Yii::t('common', 'Html Blocks (Widgets)'), 'icon' => 'circle-o', 'url' => ['/html'],],
+                    ['label' => Yii::t('common', 'Site Options'), 'icon' => 'circle-o', 'url' => ['/options'],],
+
                     ['label' => 'Login', 'url' => ['site/login'], 'visible' => Yii::$app->user->isGuest],
+                    /*
                     [
                         'label' => 'Same tools',
                         'icon' => 'share',
@@ -61,6 +71,8 @@
                             ],
                         ],
                     ],
+                    */
+                    ['label' => Yii::t('common', 'Labels Categories'), 'icon' => 'circle-o', 'url' => ['/categories'],],
                 ],
             ]
         ) ?>
