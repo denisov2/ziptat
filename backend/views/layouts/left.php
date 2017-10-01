@@ -32,8 +32,10 @@
                 'items' => [
                     ['label' =>  Yii::t('common', 'Menu'), 'options' => ['class' => 'header']],
 
-                    ['label' => Yii::t('common', 'Users'), 'icon' => 'circle-o', 'url' => ['/user/admin'],],
-                    ['label' => Yii::t('common', 'Labels'), 'icon' => 'circle-o', 'url' => ['/labels'],],
+                    ['label' => Yii::t('common', 'Users'), 'icon' => 'circle-o', 'url' => ['/user/admin']],
+                    ['label' => Yii::t('common', 'Labels'), 'icon' => 'circle-o', 'url' => ['/label']],
+                    ['label' => Yii::t('common', 'Labels Categories'), 'icon' => 'circle-o', 'url' => ['/category']],
+                    ['label' => Yii::t('common', 'Labels Subcategories'), 'icon' => 'circle-o', 'url' => ['/subcategory']],
                     ['label' => Yii::t('common', 'Order'), 'icon' => 'circle-o', 'url' => ['/orders'],],
                     ['label' => Yii::t('common', 'News'), 'icon' => 'circle-o', 'url' => ['/news'],],
                     ['label' => Yii::t('common', 'Articles'), 'icon' => 'circle-o', 'url' => ['/articles'],],
@@ -72,7 +74,7 @@
                         ],
                     ],
                     */
-                    ['label' => Yii::t('common', 'Labels Categories'), 'icon' => 'circle-o', 'url' => ['/categories'],],
+
                 ],
             ]
         ) ?>

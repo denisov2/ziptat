@@ -20,6 +20,9 @@ return [
 
     'Labels' => 'Наклейки',
     'Labels Categories' => 'Категории наклеек',
+    'Labels Subcategories' => 'Подкатегории наклеек',
+
+
     'Users' => 'Пользователи',
     'Order' => 'Заказы',
 
