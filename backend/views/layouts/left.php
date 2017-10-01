@@ -36,14 +36,17 @@
                     ['label' => Yii::t('common', 'Labels'), 'icon' => 'circle-o', 'url' => ['/label']],
                     ['label' => Yii::t('common', 'Labels Categories'), 'icon' => 'circle-o', 'url' => ['/category']],
                     ['label' => Yii::t('common', 'Labels Subcategories'), 'icon' => 'circle-o', 'url' => ['/subcategory']],
-                    ['label' => Yii::t('common', 'Order'), 'icon' => 'circle-o', 'url' => ['/order'],],
-                    ['label' => Yii::t('common', 'Canvas'), 'icon' => 'circle-o', 'url' => ['/canvas'],],
+                    ['label' => Yii::t('common', 'Orders'), 'icon' => 'circle-o', 'url' => ['/order'],],
+                    ['label' => Yii::t('common', 'Canvases'), 'icon' => 'circle-o', 'url' => ['/canvas'],],
                     ['label' => Yii::t('common', 'Canvas Labels'), 'icon' => 'circle-o', 'url' => ['/canvas-labels'],],
+
+                    ['label' => Yii::t('common', 'Surfaces'), 'icon' => 'circle-o', 'url' => ['/surface'],],
+                    ['label' => Yii::t('common', 'Label Surfaces'), 'icon' => 'circle-o', 'url' => ['/label-surfaces'],],
 
 
 
                     ['label' => Yii::t('common', 'News'), 'icon' => 'circle-o', 'url' => ['/news'],],
-                    ['label' => Yii::t('common', 'Articles'), 'icon' => 'circle-o', 'url' => ['/articles'],],
+                    ['label' => Yii::t('common', 'Articles'), 'icon' => 'circle-o', 'url' => ['/article'],],
                     ['label' => Yii::t('common', 'Top Menu'), 'icon' => 'circle-o', 'url' => ['/menu'],],
                     ['label' => Yii::t('common', 'Image editor'), 'icon' => 'circle-o', 'url' => ['/editor'],],
                     ['label' => Yii::t('common', 'Mailing lists'), 'icon' => 'circle-o', 'url' => ['/mailing'],],
