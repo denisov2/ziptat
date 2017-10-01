@@ -2,7 +2,7 @@
 
 namespace common\models;
 
-use Yii;
+use Yii; 
 
 /**
  * This is the model class for table "surface".
@@ -17,7 +17,7 @@ use Yii;
  *
  * @property LabelSurface[] $labelSurfaces
  */
-class Surfaces extends \yii\db\ActiveRecord
+class Surface extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc
