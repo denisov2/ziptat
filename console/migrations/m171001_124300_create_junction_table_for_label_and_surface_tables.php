@@ -9,7 +9,7 @@ use yii\db\Migration;
  * - `label`
  * - `surface`
  */
-class m171001_214300_create_junction_table_for_label_and_surface_tables extends Migration
+class m171001_124300_create_junction_table_for_label_and_surface_tables extends Migration
 {
     /**
      * @inheritdoc
