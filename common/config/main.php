@@ -9,6 +9,10 @@ return [
     'modules' => [
         'user' => [
             'class' => Da\User\Module::class,
+            'classMap' => [
+                'User' => common\models\User::class,
+            ],
+
 
             'administrators' => [
                 'denisov.dmitriy@gmail.com',
