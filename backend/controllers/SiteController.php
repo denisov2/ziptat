@@ -2,6 +2,7 @@
 namespace backend\controllers;
 
 use Yii;
+use yii\helpers\Url;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
@@ -26,7 +27,7 @@ class SiteController extends Controller
                         'allow' => true,
                     ],
                     [
-                        'actions' => ['logout', 'index'],
+                        'actions' => ['logout', 'index', 'file-upload' , 'image-upload'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -49,6 +50,20 @@ class SiteController extends Controller
         return [
             'error' => [
                 'class' => 'yii\web\ErrorAction',
+            ],
+
+            'file-upload' => [
+                'class' => \vova07\imperavi\actions\UploadAction::className(),
+                'url' => Yii::$app->urlManagerFrontend->baseUrl .'/upload-files',
+                'path' => Yii::getAlias('@upload-files'),
+                'uploadOnlyImage' => false, // For not image-only uploading.
+            ],
+
+            'image-upload' => [
+                'class' => \vova07\imperavi\actions\UploadAction::className(),
+                'url' => Yii::$app->urlManagerFrontend->baseUrl .'/upload-images',
+                'path' => \Yii::getAlias('@upload-images'),
+
             ],
         ];
     }

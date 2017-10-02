@@ -60,6 +60,15 @@ return [
             'rules' => [
             ],
         ],
+
+        'urlManagerFrontend' => [
+            'class' => codemix\localeurls\UrlManager::className(),
+            'baseUrl' => '/',
+            'enablePrettyUrl' => true,
+            'showScriptName' => false,
+        ],
+
+
         'i18n' => [
             'translations' => [
                 'common*' => [

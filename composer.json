@@ -13,6 +13,9 @@
         "source": "https://github.com/yiisoft/yii2"
     },
 
+    "minimum-stability": "dev",
+    "prefer-stable" : true,
+
     "require": {
         "php": ">=5.4.0",
         "yiisoft/yii2": "~2.0.6",
@@ -26,8 +29,8 @@
         "2amigos/yii2-usuario": "~1.0",
         "codemix/yii2-localeurls": "*",
         "omnilight/yii2-shopping-cart": "*",
-        "tigrov/yii2-country": "dev-master",
-        "tigrov/intldata:": "dev-master"
+        "tigrov/yii2-country": "*",
+        "dvizh/yii2-cart": "*"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
