@@ -22,13 +22,29 @@ $this->params['breadcrumbs'][] = $this->title;
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+            ['class' => 'yii\grid\ActionColumn'],
+            [
+                'label' => Yii::t('common', 'Image types'),
+                'format' => 'html',
+                'value' => function ($model) {
+                    /* @var \common\models\Label $model */
+                    $img = Html::img( Yii::$app->urlManagerFrontend->baseUrl .$model->image_original , [
+                        'width' => '100px'
+                    ]);
+                    $link = Html::a(Yii::t('common' , 'Image types'), ['label/types', 'id'=> $model->id]);
+
+                    return "<p>$img</p><p>$link</p>";
+                },
+
+            ],
 
             'id',
             'name_en',
             'name_ru',
+
             'slug',
             'subcategory_id',
+
             // 'description_en:ntext',
             // 'description_ru:ntext',
             // 'active',
@@ -38,7 +54,7 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'created_at',
             // 'updated_at',
 
-            ['class' => 'yii\grid\ActionColumn'],
+
         ],
     ]); ?>
 </div>

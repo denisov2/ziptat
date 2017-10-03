@@ -8,6 +8,7 @@ use backend\models\Label as LabelSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 /**
  * LabelController implements the CRUD actions for Label model.
@@ -84,8 +85,25 @@ class LabelController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($model->load(Yii::$app->request->post()) ) {
+
+            if ($model->validate()) $model->save();
+            else return $this->render('update', [
+                'model' => $model,
+            ]);
+
+            $model->file_image = UploadedFile::getInstance($model, 'file_image');
+
+
+
+            $model->uploadImages();
+            $model->save(false);
+
+            return $this->render('view', [
+                'model' => $model,
+            ]);
+
+
         } else {
             return $this->render('update', [
                 'model' => $model,
@@ -104,6 +122,25 @@ class LabelController extends Controller
         $this->findModel($id)->delete();
 
         return $this->redirect(['index']);
+    }
+
+
+    public function actionTypes($id) {
+
+        $model = $this->findModel($id);
+
+        if($model && Yii::$app->request->isPost) {
+
+            \Yii::$app->session->setFlash('generating_images',\Yii::t('common', 'some_text'));
+
+
+        }
+
+        return $this->render('types', [
+            'model' => $model,
+        ]);
+
+
     }
 
     /**

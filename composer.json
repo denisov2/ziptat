@@ -30,7 +30,8 @@
         "codemix/yii2-localeurls": "*",
         "omnilight/yii2-shopping-cart": "*",
         "tigrov/yii2-country": "*",
-        "dvizh/yii2-cart": "*"
+        "dvizh/yii2-cart": "*",
+        "tpmanc/yii2-imagick": "*"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

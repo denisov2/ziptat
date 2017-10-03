@@ -3,6 +3,8 @@
 namespace common\models;
 
 use Yii;
+use yii\behaviors\SluggableBehavior;
+use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "label".
@@ -25,6 +27,23 @@ use Yii;
  */
 class Label extends \yii\db\ActiveRecord
 {
+
+    public $file_image;
+
+    const ORIGINAL_FOLDER = 'original';
+    const BIG_FOLDER = 'big';
+    const MIDDLE_FOLDER = 'middle';
+    const THUMBNAIL_FOLDER = 'thumbnail';
+
+    const BIG_WIDTH = 1800;
+    const BIG_HEIGHT = 1200;
+
+    const MIDDLE_WIDTH = 540;
+    const MIDDLE_HEIGHT = 360;
+
+    const THUMBNAIL_WIDTH = 360;
+    const THUMBNAIL_HEIGHT = 240;
+
     /**
      * @inheritdoc
      */
@@ -33,6 +52,29 @@ class Label extends \yii\db\ActiveRecord
         return 'label';
     }
 
+    public function behaviors()
+    {
+        return [
+            [
+                'class' => SluggableBehavior::className(),
+                'attribute' => 'name_en',
+                'immutable' => false,
+                'ensureUnique' => true,
+                'slugAttribute' => 'slug'
+            ],
+
+            'timestamp' => [
+                'class' => 'yii\behaviors\TimestampBehavior',
+                'attributes' => [
+                    ActiveRecord::EVENT_BEFORE_INSERT => ['created_at', 'updated_at'],
+                    ActiveRecord::EVENT_BEFORE_UPDATE => ['updated_at'],
+                ],
+            ],
+        ];
+    }
+
+
+
     /**
      * @inheritdoc
      */
@@ -40,9 +82,10 @@ class Label extends \yii\db\ActiveRecord
     {
         return [
             [['name_en', 'name_ru', 'slug', 'subcategory_id'], 'required'],
-            [['subcategory_id', 'active', 'status', 'likes', 'created_at', 'updated_at'], 'integer'],
+            [['subcategory_id', 'active', 'status', 'likes'], 'integer'],
             [['description_en', 'description_ru'], 'string'],
             [['name_en', 'name_ru', 'slug', 'image_original'], 'string', 'max' => 255],
+            ['file_image', 'file', 'skipOnEmpty' => true, 'extensions' => 'png, jpg'],
             [['subcategory_id'], 'exist', 'skipOnError' => true, 'targetClass' => Subcategory::className(), 'targetAttribute' => ['subcategory_id' => 'id']],
         ];
     }
@@ -75,5 +118,20 @@ class Label extends \yii\db\ActiveRecord
     public function getSubcategory()
     {
         return $this->hasOne(Subcategory::className(), ['id' => 'subcategory_id']);
+    }
+
+    public function uploadImages()
+    {
+        $time = time();
+
+        if (!empty ($this->file_image)) {
+            if ($this->validate(['file_image'])) {
+                $this->file_image->saveAs(\Yii::getAlias('@labels') . '/'.self::ORIGINAL_FOLDER.'/' . $time . '_' . $this->file_image->baseName . '.' . $this->file_image->extension);
+                $this->image_original = $time . '_' . $this->file_image->baseName . '.' . $this->file_image->extension;
+               // var_dump($this->image_original); die();
+            }
+        }
+
+        return true;
     }
 }

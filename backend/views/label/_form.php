@@ -2,6 +2,9 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use vova07\imperavi\Widget;
+use \yii\helpers\Url;
+use kartik\widgets\FileInput;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Label */
@@ -12,29 +15,82 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'name_en')->textInput(['maxlength' => true]) ?>
+    <div class="row">
+        <div class="col-md-3">
+            <?= $form->field($model, 'slug')->textInput(['maxlength' => true]) ?>
+        </div>
+        <div class="col-md-3">
+            <?= $form->field($model, 'subcategory_id')->textInput() ?>
+        </div>
+        <div class="col-md-3">
+            <?= $form->field($model, 'active')->textInput() ?>
+        </div>
+        <div class="col-md-3">
+            <?= $form->field($model, 'status')->textInput() ?>
+        </div>
+    </div>
 
-    <?= $form->field($model, 'name_ru')->textInput(['maxlength' => true]) ?>
+    <div class="row">
+        <div class="col-md-6">
 
-    <?= $form->field($model, 'slug')->textInput(['maxlength' => true]) ?>
+            <h3><?= Yii::t('common', 'English version'); ?></h3>
 
-    <?= $form->field($model, 'subcategory_id')->textInput() ?>
+            <?= $form->field($model, 'name_en')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'description_en')->textarea(['rows' => 6]) ?>
+            <?= $form->field($model, 'description_en')->widget(Widget::className(), [
+                'settings' => [
+                    'lang' => 'ru',
+                    'minHeight' => 200,
+                    'imageUpload' => \yii\helpers\Url::to(['/site/image-upload']),
+                    'fileUpload' => Url::to(['/site/file-upload']),
+                    'plugins' => ['fullscreen',]
+                ]
+            ]) ?>
 
-    <?= $form->field($model, 'description_ru')->textarea(['rows' => 6]) ?>
+        </div>
+        <div class="col-md-6">
 
-    <?= $form->field($model, 'active')->textInput() ?>
+            <h3><?= Yii::t('common', 'Russian version'); ?></h3>
 
-    <?= $form->field($model, 'status')->textInput() ?>
+            <?= $form->field($model, 'name_ru')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'likes')->textInput() ?>
+            <?= $form->field($model, 'description_ru')->widget(Widget::className(), [
+                'settings' => [
+                    'lang' => 'ru',
+                    'minHeight' => 200,
+                    'imageUpload' => Url::to(['/site/image-upload']),
+                    'fileUpload' => Url::to(['/site/file-upload']),
+                    'plugins' => ['fullscreen',]
+                ]
+            ]) ?>
 
-    <?= $form->field($model, 'image_original')->textInput(['maxlength' => true]) ?>
+        </div>
+    </div>
 
-    <?= $form->field($model, 'created_at')->textInput() ?>
+    <div class="row">
+        <div class="col-md-6">
 
-    <?= $form->field($model, 'updated_at')->textInput() ?>
+            <?php
+
+            if(!empty($model->image_original)){
+                echo Html::img($model->image_original, $options = ['class' => '', 'style' => ['max-width'=>'100%']]);
+            } ?>
+
+
+
+            <?= $form->field($model, 'file_image')->widget(FileInput::classname(), [
+                'options' => ['accept' => 'image/*'],
+                'pluginOptions' => [
+                    'showPreview' => true,
+                    'showCaption' => true,
+                    'showRemove' => true,
+                    'showUpload' => false
+                ]
+            ]); ?>
+
+        </div>
+    </div>
+
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? Yii::t('common', 'Create') : Yii::t('common', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

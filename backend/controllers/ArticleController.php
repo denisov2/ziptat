@@ -100,7 +100,7 @@ class ArticleController extends Controller
             $model->uploadImages();
             $model->save(false);
 
-            return $this->render('update', [
+            return $this->render('view', [
                 'model' => $model,
             ]);
 
