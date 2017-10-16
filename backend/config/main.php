@@ -61,6 +61,8 @@ return [
             ],
         ],
 
+
+
         'urlManagerFrontend' => [
             'class' => codemix\localeurls\UrlManager::className(),
             'baseUrl' => '/',

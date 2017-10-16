@@ -4,11 +4,13 @@ namespace backend\controllers;
 
 use Yii;
 use common\models\Label;
-use backend\models\Label as LabelSearch;
+use backend\models\LabelSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\UploadedFile;
+use yii\bootstrap\Alert;
+use tpmanc\imagick\Imagick;
 
 /**
  * LabelController implements the CRUD actions for Label model.
@@ -66,13 +68,30 @@ class LabelController extends Controller
     {
         $model = new Label();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        } else {
-            return $this->render('create', [
-                'model' => $model,
-            ]);
-        }
+        if ($model->load(Yii::$app->request->post()) ) {
+
+        if ($model->validate()) $model->save();
+        else return $this->render('update', [
+            'model' => $model,
+        ]);
+
+        $model->file_image = UploadedFile::getInstance($model, 'file_image');
+
+
+
+        $model->uploadImages();
+        $model->save(false);
+
+        return $this->render('view', [
+            'model' => $model,
+        ]);
+
+
+    } else {
+        return $this->render('create', [
+            'model' => $model,
+        ]);
+    }
     }
 
     /**
@@ -125,18 +144,47 @@ class LabelController extends Controller
     }
 
 
-    public function actionTypes($id) {
+    public function actionGenerate($id) {
 
         $model = $this->findModel($id);
 
+
+        $original_image_path = Yii::getAlias("@labels/".Label::ORIGINAL_FOLDER."/{$model->image_original}");
+        $big_image_path = Yii::getAlias("@labels/".Label::BIG_FOLDER."/{$model->image_original}");
+        $middle_image_path = Yii::getAlias("@labels/".Label::MIDDLE_FOLDER."/{$model->image_original}");
+        $thumbnail_image_path = Yii::getAlias("@labels/".Label::THUMBNAIL_FOLDER."/{$model->image_original}");
+
+        $big_image = null;
+        $middle_image = null;
+        $thumbnail_image = null;
+
+        if(file_exists($original_image_path)) {
+
+            $imagick = Imagick::open($original_image_path);
+            $imagick->resize(Label::BIG_WIDTH, false)->saveTo($big_image_path);
+            $big_image = file_exists($big_image_path);
+
+            $imagick = Imagick::open($original_image_path);
+            $imagick->resize(Label::MIDDLE_WIDTH, false)->saveTo($middle_image_path);
+            $middle_image = file_exists($middle_image_path);
+
+
+            $imagick = Imagick::open($original_image_path);
+            $imagick->resize(Label::THUMBNAIL_WIDTH, false)->saveTo($thumbnail_image_path);
+            $thumbnail_image = file_exists($thumbnail_image_path);
+
+            \Yii::$app->session->setFlash('generating_images',\Yii::t('common', 'Generating images'));
+        }
+
+
         if($model && Yii::$app->request->isPost) {
 
-            \Yii::$app->session->setFlash('generating_images',\Yii::t('common', 'some_text'));
+
 
 
         }
 
-        return $this->render('types', [
+        return $this->render('generate', [
             'model' => $model,
         ]);
 

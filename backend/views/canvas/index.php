@@ -22,15 +22,62 @@ $this->params['breadcrumbs'][] = $this->title;
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+            ['class' => 'yii\grid\ActionColumn'],
 
             'id',
-            'order_id',
-            'type',
+            [
+                'label' => Yii::t('common', 'Links'),
+                'format' => 'html',
+                'value' => function ($model) {
+                    /* @var \common\models\Canvas $model */
+
+
+                    return Html::a(Yii::t('common', 'Generate items from JSON'), \yii\helpers\Url::to(['generate-items', 'id'=>$model->id]));
+
+
+
+                },
+
+                'filter' => \common\models\Order::getOrdersAsArray()
+
+            ],
+            [
+                'label' => Yii::t('common', 'Order'),
+                'attribute' => 'order_id',
+
+                'value' => function ($model) {
+                    /* @var \common\models\Canvas $model */
+
+
+                    /* @var \common\models\Order $order */
+                    $order = $model->getOrder()->one();
+                    return "#". $order->id . ', ' . $order->first_name . ' ' .$order->last_name;
+
+
+
+                },
+
+                'filter' => \common\models\Order::getOrdersAsArray()
+
+            ],
+            [
+                'label' => Yii::t('common', 'Canvas type'),
+                'attribute' => 'type',
+
+                'value' => function ($model) {
+                    /* @var \common\models\Canvas $model */
+
+                    return $model->getType();
+
+                },
+
+                'filter' => \common\models\Canvas::getTypes()
+
+            ],
             'created_at',
             'updated_at',
 
-            ['class' => 'yii\grid\ActionColumn'],
+
         ],
     ]); ?>
 </div>

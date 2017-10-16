@@ -10,14 +10,21 @@ use Yii;
  * @property integer $id
  * @property integer $order_id
  * @property integer $type
+ * @property string $json
  * @property integer $created_at
  * @property integer $updated_at
  *
  * @property Order $order
- * @property CanvasLabel[] $canvasLabels
+ * @property CanvasLabels[] $canvasLabels
  */
 class Canvas extends \yii\db\ActiveRecord
 {
+    const TYPE_CLOTHES = 1;
+    const TYPE_OTHERS = 2;
+
+
+
+
     /**
      * @inheritdoc
      */
@@ -33,6 +40,7 @@ class Canvas extends \yii\db\ActiveRecord
     {
         return [
             [['order_id', 'type', 'created_at', 'updated_at'], 'integer'],
+            ['json', 'string'],
             [['order_id'], 'exist', 'skipOnError' => true, 'targetClass' => Order::className(), 'targetAttribute' => ['order_id' => 'id']],
         ];
     }
@@ -48,6 +56,7 @@ class Canvas extends \yii\db\ActiveRecord
             'type' => Yii::t('common', 'Type'),
             'created_at' => Yii::t('common', 'Created At'),
             'updated_at' => Yii::t('common', 'Updated At'),
+            'json' => Yii::t('common', 'Json'),
         ];
     }
 
@@ -59,11 +68,26 @@ class Canvas extends \yii\db\ActiveRecord
         return $this->hasOne(Order::className(), ['id' => 'order_id']);
     }
 
+
+
     /**
      * @return \yii\db\ActiveQuery
      */
     public function getCanvasLabels()
     {
-        return $this->hasMany(CanvasLabel::className(), ['canvas_id' => 'id']);
+        return $this->hasMany(CanvasLabels::className(), ['canvas_id' => 'id']);
+    }
+
+    public static function getTypes() {
+
+        return [
+            self::TYPE_CLOTHES => Yii::t('common', 'Clothes'),
+            self::TYPE_OTHERS => Yii::t('common', 'Wall, Wallpaper, Tile, Furniture, Tableware'),
+        ];
+    }
+
+    public function getType() {
+
+        return isset ($this->getTypes()[$this->type]) ? $this->getTypes()[$this->type] : null;
     }
 }

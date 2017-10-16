@@ -6,3 +6,4 @@ Yii::setAlias('@console', dirname(dirname(__DIR__)) . '/console');
 Yii::setAlias('@upload-images', dirname(dirname(__DIR__)) . '/frontend/web/upload-images');
 Yii::setAlias('@upload-files', dirname(dirname(__DIR__)) . '/frontend/web/upload-files');
 Yii::setAlias('@labels', dirname(dirname(__DIR__)) . '/frontend/web/labels');
+Yii::setAlias('@canvases', dirname(dirname(__DIR__)) . '/frontend/web/canvases');

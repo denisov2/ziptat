@@ -5,12 +5,12 @@ namespace backend\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use common\models\Label as LabelModel;
+use common\models\Label;
 
 /**
- * Label represents the model behind the search form about `common\models\Label`.
+ * LabelSearch represents the model behind the search form about `common\models\Label`.
  */
-class Label extends LabelModel
+class LabelSearch extends Label
 {
     /**
      * @inheritdoc
@@ -41,7 +41,7 @@ class Label extends LabelModel
      */
     public function search($params)
     {
-        $query = LabelModel::find();
+        $query = Label::find();
 
         // add conditions that should always apply here
 

@@ -7,7 +7,7 @@ use yii\helpers\Html;
 
 $this->title = Yii::t('common', 'Update {modelClass}: ', [
     'modelClass' => 'Label',
-]) . $model->id;
+]) . $model->{'name_'.Yii::$app->language};
 $this->params['breadcrumbs'][] = ['label' => Yii::t('common', 'Labels'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = Yii::t('common', 'Update');

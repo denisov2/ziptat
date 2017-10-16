@@ -3,6 +3,7 @@
 namespace common\models;
 
 use Yii;
+use yii\helpers\ArrayHelper;
 
 /**
  * This is the model class for table "order".
@@ -88,5 +89,10 @@ class Order extends \yii\db\ActiveRecord
     public function getUser()
     {
         return $this->hasOne(User::className(), ['id' => 'user_id']);
+    }
+
+    public static function getOrdersAsArray()
+    {
+        return ArrayHelper::map( self::find()->all() , 'id', 'id');
     }
 }

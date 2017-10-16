@@ -44,6 +44,11 @@ class Label extends \yii\db\ActiveRecord
     const THUMBNAIL_WIDTH = 360;
     const THUMBNAIL_HEIGHT = 240;
 
+
+    const STATUS_IN_STOCK = 1;
+    const STATUS_NOT_IN_STOCK = 2;
+
+
     /**
      * @inheritdoc
      */
@@ -134,4 +139,46 @@ class Label extends \yii\db\ActiveRecord
 
         return true;
     }
+
+    public function getImageUrl($type = self::ORIGINAL_FOLDER)
+    {
+
+        return '/labels/' . $type .'/'. $this->image_original;
+    }
+
+    public function getImagePath($type = self::ORIGINAL_FOLDER)
+    {
+        return Yii::getAlias("@labels/$type/{$this->image_original}");
+
+    }
+
+    public function isImageExist($type = self::ORIGINAL_FOLDER) {
+
+        return file_exists($this->getImagePath($type));
+
+    }
+
+    public function getImageInfo ($type = self::ORIGINAL_FOLDER)
+    {
+        $result = "<p>" . Yii::t('common' , 'Image data: ')  . getimagesize($this->getImagePath($type)) [3] . ". ";
+        $result .= Yii::t('common' , 'Image size: ')  .  round(filesize($this->getImagePath($type)) / 1024 , 2 )  ." Kb.</p>";
+
+        return $result;
+
+    }
+
+    public static function  getStatusesAsArray() {
+        return [
+            self::STATUS_IN_STOCK => Yii::t('common' , 'In stock'),
+            self::STATUS_NOT_IN_STOCK => Yii::t('common' , 'Not in stock'),
+        ];
+    }
+
+    public function getStatus() {
+
+        return isset(self::getStatusesAsArray()[$this->status]) ? $this->getStatusesAsArray()[$this->status] : false;
+
+    }
+
+
 }

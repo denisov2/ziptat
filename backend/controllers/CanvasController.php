@@ -2,6 +2,7 @@
 
 namespace backend\controllers;
 
+use common\models\Label;
 use Yii;
 use common\models\Canvas;
 use backend\models\CanvasSearch;
@@ -52,6 +53,23 @@ class CanvasController extends Controller
     public function actionView($id)
     {
         return $this->render('view', [
+            'model' => $this->findModel($id),
+        ]);
+    }
+
+    public function actionGenerateItems($id)
+    {
+
+        $model = $this->findModel($id);
+
+
+
+
+
+
+
+
+        return $this->render('generate-items', [
             'model' => $this->findModel($id),
         ]);
     }

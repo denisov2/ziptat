@@ -1,23 +1,10 @@
-<?php
-
-/* @var $this \yii\web\View */
-/* @var $content string */
-
-use yii\helpers\Html;
-use yii\bootstrap\Nav;
-use yii\bootstrap\NavBar;
-use yii\widgets\Breadcrumbs;
-use frontend\assets\AppAsset;
-use common\widgets\Alert;
-use \frontend\widgets\LanguageSelector;
-
-//AppAsset::register($this);
-?>
-<?php $this->beginPage() ?>
 <!DOCTYPE html>
-<html lang="<?= Yii::$app->language ?>">
+<html lang="ru">
+
 <head>
-    <meta charset="<?= Yii::$app->charset ?>">
+    <title>Главная</title>
+    <!-- meta-->
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#760532">
@@ -25,20 +12,12 @@ use \frontend\widgets\LanguageSelector;
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-    <?= Html::csrfMetaTags() ?>
-
     <!--[if lt IE 10]>
     <meta http-equiv="refresh" content="0;url=http://verstka.integratic.ru/tatu-2/pagebrowser.html"/>
     <![endif]-->
     <noscript> <meta http-equiv="refresh" content="0;url=http://verstka.integratic.ru/tatu-2/pagebrowser.html"/></noscript>
-
-    <title><?= Html::encode($this->title) ?></title>
-    <?php $this->head() ?>
 </head>
 <body>
-<?php $this->beginBody() ?>
-
-
 <div class="wrapper loading">
     <!-- header -->
     <header>
@@ -48,13 +27,13 @@ use \frontend\widgets\LanguageSelector;
                     <p>Интернет-магазин наклеек</p>
                 </li>
                 <li class="email">
-                    <img src="/img/icon/email.png" alt="icon">
+                    <img src="img/icon/email.png" alt="icon">
                     <a href="mailto:4545600@mail.ru" target="_top">4545600@mail.ru</a>
                 </li>
                 <li class="reg">
                     <ul>
                         <li class="top-link top-links"  >
-                            <!-- <img src="/img/icon/user.png"  alt="icon"> -->
+                            <!-- <img src="img/icon/user.png"  alt="icon"> -->
                             <span>Регистрация</span>
                             <div class="registration">
                                 <div class="titlespan">
@@ -76,13 +55,13 @@ use \frontend\widgets\LanguageSelector;
                                 </div>
                                 <div class="textkod">Введите код с картинки</div>
                                 <div class="kodskar">
-                                    <img src="/img/icon/kod.png" alt="" class="imgkod">
+                                    <img src="img/icon/kod.png" alt="" class="imgkod">
                                     <input type="text" class="kod" >
                                 </div>
                                 <a href="#" class="vhodd">Зарегистрироваться</a><br>
                                 <div class="voyti"><span class="voytit">Зарегистрироваться с помощью </span>
-                                    <a href="https://www.facebook.com/" target="_blank"><img src="/img/icon/facebook1.png" alt="" class="cosseti" ></a>
-                                    <a href="https://www.instagram.com/" target="_blank"> <img src="/img/icon/instagram1.png" alt="" class="cossetis"> </a>
+                                    <a href="https://www.facebook.com/" target="_blank"><img src="img/icon/facebook1.png" alt="" class="cosseti" ></a>
+                                    <a href="https://www.instagram.com/" target="_blank"> <img src="img/icon/instagram1.png" alt="" class="cossetis"> </a>
                                 </div>
                             </div>
                         </li>
@@ -97,7 +76,7 @@ use \frontend\widgets\LanguageSelector;
                                     <span>Для входа введите ваш пароль</span>
                                 </div>
                                 <div class="textkod">Введите код с картинки</div>
-                                <div class="kodskar"><img src="/img/icon/kod.png" alt="" class="imgkod">
+                                <div class="kodskar"><img src="img/icon/kod.png" alt="" class="imgkod">
                                     <input type="text" class="kod" >
                                 </div>
                                 <a href="#" class="vhodd">Войти</a><br>
@@ -105,10 +84,10 @@ use \frontend\widgets\LanguageSelector;
                                 <div class="voytit">
                                     <span class="voytit">Войти  помощью</span>
                                     <a href="https://www.facebook.com/" target="_blank">
-                                        <img src="/img/icon/facebook1.png" alt="" class="cosseti" >
+                                        <img src="img/icon/facebook1.png" alt="" class="cosseti" >
                                     </a>
                                     <a href="https://www.instagram.com/" target="_blank">
-                                        <img src="/img/icon/instagram1.png" alt="" class="cossetis">
+                                        <img src="img/icon/instagram1.png" alt="" class="cossetis">
                                     </a>
                                 </div>
                             </div>
@@ -131,13 +110,13 @@ use \frontend\widgets\LanguageSelector;
             <p>Интернет-магазин наклеек</p>
             <div class="two-header">
                 <div class="header-left">
-                    <img class="burger-s par2" src="/img/burger-2.png" alt="">
-                    <img class="par7" src="/img/krest.png" alt="">
-                    <img class="par3" src="/img/magnify-24.png" alt="">
-                    <img class="par8" src="/img/krest.png" alt="">
+                    <img class="burger-s par2" src="img/burger-2.png" alt="">
+                    <img class="par7" src="img/krest.png" alt="">
+                    <img class="par3" src="img/magnify-24.png" alt="">
+                    <img class="par8" src="img/krest.png" alt="">
                 </div>
                 <div class="header-center">
-                    <img src="/img/logo-2.png" alt="">
+                    <img src="img/logo-2.png" alt="">
                 </div>
                 <div class="header-big">
                     <div>
@@ -147,8 +126,8 @@ use \frontend\widgets\LanguageSelector;
                         </p>
                     </div>
                     <div class="header-right">
-                        <img class="top-hov-1" src="/img/key-2.png" alt="">
-                        <img class="top-hov-2" src="/img/exit-2.png" alt="">
+                        <img class="top-hov-1" src="img/key-2.png" alt="">
+                        <img class="top-hov-2" src="img/exit-2.png" alt="">
                         <div>
                             <div class="top-win">
                                 <div class="registration">
@@ -174,13 +153,13 @@ use \frontend\widgets\LanguageSelector;
                                     </div>
                                     <div class="textkod">Введите код с картинки</div>
                                     <div class="kodskar">
-                                        <img src="/img/icon/kod.png" alt="" class="imgkod">
+                                        <img src="img/icon/kod.png" alt="" class="imgkod">
                                         <input type="text" class="kod" >
                                     </div>
                                     <a href="#" class="vhodd">Зарегистрироваться</a><br>
                                     <div class="voyti"><span class="voytit">Зарегистрироваться с помощью </span>
-                                        <a href="https://www.facebook.com/" target="_blank"><img src="/img/icon/facebook1.png" alt="" class="cosseti" ></a>
-                                        <a href="https://www.instagram.com/" target="_blank"> <img src="/img/icon/instagram1.png" alt="" class="cossetis"> </a>
+                                        <a href="https://www.facebook.com/" target="_blank"><img src="img/icon/facebook1.png" alt="" class="cosseti" ></a>
+                                        <a href="https://www.instagram.com/" target="_blank"> <img src="img/icon/instagram1.png" alt="" class="cossetis"> </a>
                                     </div>
                                 </div>
                             </div>
@@ -197,7 +176,7 @@ use \frontend\widgets\LanguageSelector;
                                         <span>Для входа введите ваш пароль</span>
                                     </div>
                                     <div class="textkod">Введите код с картинки</div>
-                                    <div class="kodskar"><img src="/img/icon/kod.png" alt="" class="imgkod">
+                                    <div class="kodskar"><img src="img/icon/kod.png" alt="" class="imgkod">
                                         <input type="text" class="kod" >
                                     </div>
                                     <a href="#" class="vhodd">Войти</a><br>
@@ -205,10 +184,10 @@ use \frontend\widgets\LanguageSelector;
                                     <div class="voytit">
                                         <span class="voytit">Войти  помощью</span>
                                         <a href="https://www.facebook.com/" target="_blank">
-                                            <img src="/img/icon/facebook1.png" alt="" class="cosseti" >
+                                            <img src="img/icon/facebook1.png" alt="" class="cosseti" >
                                         </a>
                                         <a href="https://www.instagram.com/" target="_blank">
-                                            <img src="/img/icon/instagram1.png" alt="" class="cossetis">
+                                            <img src="img/icon/instagram1.png" alt="" class="cossetis">
                                         </a>
                                     </div>
                                 </div>
@@ -233,12 +212,12 @@ use \frontend\widgets\LanguageSelector;
             <div class="block-color">
                 <div class="flex-dlock">
                     <div class="block-one">
-                        <img src="/img/list-3.png" alt="">
+                        <img src="img/list-3.png" alt="">
                         <a href="#">4545600@mail.ru</a>
                     </div>
                     <div class="block-two">
-                        <a href="#"><img src="/img/fsb.png" alt=""></a>
-                        <a href="#"><img src="/img/instagram.png" alt=""></a>
+                        <a href="#"><img src="img/fsb.png" alt=""></a>
+                        <a href="#"><img src="img/instagram.png" alt=""></a>
                     </div>
                 </div>
                 <div class="flex-dlock">
@@ -246,7 +225,7 @@ use \frontend\widgets\LanguageSelector;
                         <button>Как заказать наклейку?</button>
                     </div>
                     <div class="img-posit">
-                        <img src="/img/cart.png" alt="">
+                        <img src="img/cart.png" alt="">
                         <div class="span-1">3</div>
                     </div>
                 </div>
@@ -254,20 +233,20 @@ use \frontend\widgets\LanguageSelector;
             <div class="block-bak">
                 <div class="slide" id="toggle-cart">
                     <div class="tu-block">
-                        <img src="/img/img-28.png" alt="">
+                        <img src="img/img-28.png" alt="">
                         <p>Очень длинное название наклейки</p>
-                        <img src="/img/krestt.png" alt="">
+                        <img src="img/krestt.png" alt="">
                     </div>
                     <div class="tu-block">
-                        <img src="/img/img-28.png" alt="">
+                        <img src="img/img-28.png" alt="">
                         <p>Очень длинное название наклейки</p>
-                        <img src="/img/krestt.png" alt="">
+                        <img src="img/krestt.png" alt="">
                     </div>
                 </div>
                 <div class="bottom-block">
                     <p class="paar2">Разввернуть корзину</p>
                     <p class="paar2">Свернуть корзину</p>
-                    <img src="/img/arrow-11.png" alt="">
+                    <img src="img/arrow-11.png" alt="">
                 </div>
             </div>
         </div>
@@ -489,7 +468,7 @@ use \frontend\widgets\LanguageSelector;
                 <!-- right -->
                 <!-- <div class="rod">
                     <button class="bot-top">Показать еще</button>
-                    <img class="img-top-1" src="/img/arow-19.png" alt="">
+                    <img class="img-top-1" src="img/arow-19.png" alt="">
                 </div> -->
             </div>
         </div>
@@ -499,7 +478,7 @@ use \frontend\widgets\LanguageSelector;
         <div class="just-between t-container">
             <div class="logo">
                 <a href="index.html">
-                    <img src="/img/logo.png" alt="logo">
+                    <img src="img/logo.png" alt="logo">
                 </a>
             </div>
             <ul class="navbar">
@@ -526,52 +505,52 @@ use \frontend\widgets\LanguageSelector;
                 </li>
             </ul>
             <a class="button-faq" data-fancybox data-caption="Как пользоваться сайтом" href="https://youtu.be/OD77h1XuLR8">
-                <img src="/img/icon/faq.png" alt="">Как заказать наклеки?
+                <img src="img/icon/faq.png" alt="">Как заказать наклеки?
             </a>
             <div class="faqq">
 
             </div>
             <div class="cart">
-                <img src="/img/icon/cart_03.png" alt="" class="cartimg">
+                <img src="img/icon/cart_03.png" alt="" class="cartimg">
                 <span>3</span>
                 <div class="popup-item-blockk">
                     <h4>В Корзине:</h4>
                     <div class="popup-item">
                         <div class="for-img">
-                            <img src="/img/tatu/1.png" class="imgvsp" alt="">
+                            <img src="img/tatu/1.png" class="imgvsp" alt="">
                         </div>
                         <div class="for-text">
                             <h4>Полиезия и маори</h4><br>
                             <p>Их наносили только <br>мужчины и только по</p>
                         </div>
                         <div class="clossse">
-                            <img src="/img/icon/close.png" alt="" class="closee">
+                            <img src="img/icon/close.png" alt="" class="closee">
                             <div class="helping">Удалить из корзины</div>
                         </div>
                     </div>
                     <div class="popup-item">
                         <div class="for-img">
-                            <img src="/img/tatu/1.png" class="imgvsp" alt="">
+                            <img src="img/tatu/1.png" class="imgvsp" alt="">
                         </div>
                         <div class="for-text">
                             <h4>Полиезия и маори</h4><br>
                             <p>Их наносили только <br>мужчины и только по</p>
                         </div>
                         <div class="clossse">
-                            <img src="/img/icon/close.png" alt="" class="closee">
+                            <img src="img/icon/close.png" alt="" class="closee">
                             <div class="helping">Удалить из корзины</div>
                         </div>
                     </div>
                     <div class="popup-item">
                         <div class="for-img">
-                            <img src="/img/tatu/1.png" class="imgvsp" alt="">
+                            <img src="img/tatu/1.png" class="imgvsp" alt="">
                         </div>
                         <div class="for-text">
                             <h4>Полиезия и маори</h4><br>
                             <p>Их наносили только <br>мужчины и только по</p>
                         </div>
                         <div class="clossse">
-                            <img src="/img/icon/close.png" alt="" class="closee">
+                            <img src="img/icon/close.png" alt="" class="closee">
                             <div class="helping">Удалить из корзины</div>
                         </div>
                     </div>
@@ -612,7 +591,7 @@ use \frontend\widgets\LanguageSelector;
                         </li>
                         <li>
                             <a class="button-faq" data-fancybox data-caption="Как пользоваться сайтом" href="https://youtu.be/OD77h1XuLR8">
-                                <img src="/img/icon/faq.png" alt="">Как заказать наклеки?
+                                <img src="img/icon/faq.png" alt="">Как заказать наклеки?
                             </a>
                         </li>
                     </ul>
@@ -625,53 +604,53 @@ use \frontend\widgets\LanguageSelector;
                         </div>
                         <div class="socseti">
                             <a href="https://www.instagram.com/">
-                                <img  src="/img/icon/instagram.png" alt="" class="cosseti">
+                                <img  src="img/icon/instagram.png" alt="" class="cosseti">
                             </a>
                             <a href="https://www.facebook.com/">
-                                <img src="/img/icon/facebook.png" alt="" class="cosseti">
+                                <img src="img/icon/facebook.png" alt="" class="cosseti">
                             </a>
                         </div>
                         <div class="cart">
-                            <img src="/img/icon/cart_03.png" alt="">
+                            <img src="img/icon/cart_03.png" alt="">
                             <span>3</span>
                             <div class="popup-item-blockk">
                                 <h4>В Корзине:</h4>
                                 <div class="popup-item">
                                     <div class="for-img">
-                                        <img src="/img/tatu/1.png" class="imgvsp" alt="">
+                                        <img src="img/tatu/1.png" class="imgvsp" alt="">
                                     </div>
                                     <div class="for-text">
                                         <h4>Полиезия и маори</h4><br>
                                         <p>Их наносили только <br>мужчины и только по</p>
                                     </div>
                                     <div class="clossse">
-                                        <img src="/img/icon/close.png" alt="" class="closee">
+                                        <img src="img/icon/close.png" alt="" class="closee">
                                         <div class="helping">Удалить из корзины</div>
                                     </div>
                                 </div>
                                 <div class="popup-item">
                                     <div class="for-img">
-                                        <img src="/img/tatu/1.png" class="imgvsp" alt="">
+                                        <img src="img/tatu/1.png" class="imgvsp" alt="">
                                     </div>
                                     <div class="for-text">
                                         <h4>Полиезия и маори</h4><br>
                                         <p>Их наносили только <br>мужчины и только по</p>
                                     </div>
                                     <div class="clossse">
-                                        <img src="/img/icon/close.png" alt="" class="closee">
+                                        <img src="img/icon/close.png" alt="" class="closee">
                                         <div class="helping">Удалить из корзины</div>
                                     </div>
                                 </div>
                                 <div class="popup-item">
                                     <div class="for-img">
-                                        <img src="/img/tatu/1.png" class="imgvsp" alt="">
+                                        <img src="img/tatu/1.png" class="imgvsp" alt="">
                                     </div>
                                     <div class="for-text">
                                         <h4>Полиезия и маори</h4><br>
                                         <p>Их наносили только <br>мужчины и только по</p>
                                     </div>
                                     <div class="clossse">
-                                        <img src="/img/icon/close.png" alt="" class="closee">
+                                        <img src="img/icon/close.png" alt="" class="closee">
                                         <div class="helping">Удалить из корзины</div>
                                     </div>
                                 </div>
@@ -923,7 +902,7 @@ use \frontend\widgets\LanguageSelector;
                             <input type="password" placeholder="Ваш пaроль" class="inp-2 in-2r">
                             <p class="kod-2 b">Введите код с картинки</p>
                             <div>
-                                <img class="img-2" src="/img/icon/kod.png" alt="">
+                                <img class="img-2" src="img/icon/kod.png" alt="">
                                 <input class="form-2 tu" type="text">
                             </div>
                             <button class="but-1">Войти</button>
@@ -931,10 +910,10 @@ use \frontend\widgets\LanguageSelector;
                             <div class="div-1">
                                 <span class="spa-1">Войти помощью</span>
                                 <a href="www.facebook.com" target="_blank">
-                                    <img src="/img/icon/facebook1.png" alt="">
+                                    <img src="img/icon/facebook1.png" alt="">
                                 </a>
                                 <a href="www.instagram.com" target="_blank">
-                                    <img src="/img/icon/instagram1.png" alt="">
+                                    <img src="img/icon/instagram1.png" alt="">
                                 </a>
                             </div>
                         </div>
@@ -946,7 +925,7 @@ use \frontend\widgets\LanguageSelector;
                             <input type="password" placeholder="Повторите пaроль" class="inp-2 in-6r">
                             <p class="kod-2">Введите код с картинки</p>
                             <div>
-                                <img class="img-2" src="/img/icon/kod.png" alt="">
+                                <img class="img-2" src="img/icon/kod.png" alt="">
                                 <input class="form-2" type="text">
                             </div>
                             <button class="but-2">Зарегистрироваться</button>
@@ -954,15 +933,15 @@ use \frontend\widgets\LanguageSelector;
                             <div class="div-2">
                                 <span class="spa-1">Зарегистрироваться с помощью </span>
                                 <a href="www.facebook.com" target="_blank">
-                                    <img src="/img/icon/facebook1.png" alt="">
+                                    <img src="img/icon/facebook1.png" alt="">
                                 </a>
                                 <a href="www.instagram.com" target="_blank">
-                                    <img src="/img/icon/instagram1.png" alt="">
+                                    <img src="img/icon/instagram1.png" alt="">
                                 </a>
                             </div>
                         </div>
                     </div>
-                    <img src="/img/icon/closse.png" class="closes-2" alt="">
+                    <img src="img/icon/closse.png" class="closes-2" alt="">
                 </div>
             </div>
             <div class="popap-block-2">
@@ -986,7 +965,7 @@ use \frontend\widgets\LanguageSelector;
                 <input type="password" placeholder="Ваш пaроль" class="inp-2 in-2r">
                 <p class="kod-2 b">Введите код с картинки</p>
                 <div>
-                    <img class="img-2" src="/img/icon/kod.png" alt="">
+                    <img class="img-2" src="img/icon/kod.png" alt="">
                     <input class="form-2 tu" type="text">
                 </div>
                 <button class="but-1">Войти</button>
@@ -994,10 +973,10 @@ use \frontend\widgets\LanguageSelector;
                 <div class="div-1">
                     <span class="spa-1">Войти помощью</span>
                     <a href="www.facebook.com" target="_blank">
-                        <img src="/img/icon/facebook1.png" alt="">
+                        <img src="img/icon/facebook1.png" alt="">
                     </a>
                     <a href="www.instagram.com" target="_blank">
-                        <img src="/img/icon/instagram1.png" alt="">
+                        <img src="img/icon/instagram1.png" alt="">
                     </a>
                 </div>
             </div>
@@ -1012,7 +991,7 @@ use \frontend\widgets\LanguageSelector;
                 <input type="password" placeholder="Повторите пaроль" class="inp-2 in-6r">
                 <p class="kod-2">Введите код с картинки</p>
                 <div>
-                    <img class="img-2" src="/img/icon/kod.png" alt="">
+                    <img class="img-2" src="img/icon/kod.png" alt="">
                     <input class="form-2" type="text">
                 </div>
                 <button class="but-2 par-0">Зарегистрироваться</button>
@@ -1020,10 +999,10 @@ use \frontend\widgets\LanguageSelector;
                 <div class="div-2">
                     <span class="spa-1">Зарегистрироваться с помощью </span>
                     <a href="www.facebook.com" target="_blank">
-                        <img src="/img/icon/facebook1.png" alt="">
+                        <img src="img/icon/facebook1.png" alt="">
                     </a>
                     <a href="www.instagram.com" target="_blank">
-                        <img src="/img/icon/instagram1.png" alt="">
+                        <img src="img/icon/instagram1.png" alt="">
                     </a>
                 </div>
             </div>
@@ -1315,16 +1294,16 @@ use \frontend\widgets\LanguageSelector;
                         </div>
                         <div class="grid">
                             <div class="item">
-                                <img data-src="/img/akl/Middle/1.png" src="/img/tatu/1.png" alt="" class="uvl">
+                                <img data-src="img/akl/Middle/1.png" src="img/tatu/1.png" alt="" class="uvl">
                                 <button class="save">Сохранить</button>
                                 <button class="like">
-                                    <img src="/img/icon/like.png" alt="">
+                                    <img src="img/icon/like.png" alt="">
                                 </button>
                                 <div class="show">
                                     <div class="figure">
                                         <h3>Полинезия и маори в несколько строчек</h3>
                                         <button class="liked">
-                                            <img src="/img/icon/like.png" alt="">12</button>
+                                            <img src="img/icon/like.png" alt="">12</button>
                                         <p>Их наносили только мужчины и только по конкретному поводу Их наносили только мужчины и только по конкретному поводу Их наносили только мужчины и только по конкретному поводу</p>
                                         <div style="text-align: center;">
                                             <button class="choose">Выбрать</button>
@@ -1333,16 +1312,16 @@ use \frontend\widgets\LanguageSelector;
                                 </div>
                             </div>
                             <div class="item">
-                                <img data-src="/img/akl/Middle/2.png" src="/img/tatu/2.png" alt="" class="uvl">
+                                <img data-src="img/akl/Middle/2.png" src="img/tatu/2.png" alt="" class="uvl">
                                 <button class="save">Сохранить</button>
                                 <button class="like">
-                                    <img src="/img/icon/like.png" alt="">
+                                    <img src="img/icon/like.png" alt="">
                                 </button>
                                 <div class="show">
                                     <div class="figure">
                                         <h3>Полинезия и маори в несколько строчек</h3>
                                         <button class="liked">
-                                            <img src="/img/icon/like.png" alt="">12
+                                            <img src="img/icon/like.png" alt="">12
                                         </button>
                                         <p>Их наносили только мужчины и только по конкретному поводу Их наносили только мужчины и только по конкретному поводу Их наносили только мужчины и только по конкретному поводу</p>
                                         <div style="text-align:center;">
@@ -1352,16 +1331,16 @@ use \frontend\widgets\LanguageSelector;
                                 </div>
                             </div>
                             <div class="item">
-                                <img data-src="/img/akl/Middle/3.png" src="/img/tatu/3.png" alt=""  class="uvl">
+                                <img data-src="img/akl/Middle/3.png" src="img/tatu/3.png" alt=""  class="uvl">
                                 <button class="save">Сохранить</button>
                                 <button class="like">
-                                    <img src="/img/icon/like.png" alt="">
+                                    <img src="img/icon/like.png" alt="">
                                 </button>
                                 <div class="show">
                                     <div class="figure">
                                         <h3>Полинезия и маори в несколько строчек</h3>
                                         <button class="liked">
-                                            <img src="/img/icon/like.png" alt="">12
+                                            <img src="img/icon/like.png" alt="">12
                                         </button>
                                         <p>Их наносили только мужчины и только по конкретному поводу Их наносили только мужчины и только по конкретному поводу Их наносили только мужчины и только по конкретному поводу</p>
                                         <div style="text-align: center;">
@@ -1371,16 +1350,16 @@ use \frontend\widgets\LanguageSelector;
                                 </div>
                             </div>
                             <div class="item">
-                                <img data-src="/img/akl/Middle/4.png" src="/img/tatu/4.png" alt=""  class="uvl">
+                                <img data-src="img/akl/Middle/4.png" src="img/tatu/4.png" alt=""  class="uvl">
                                 <button class="save">Сохранить</button>
                                 <button class="like">
-                                    <img src="/img/icon/like.png" alt="">
+                                    <img src="img/icon/like.png" alt="">
                                 </button>
                                 <div class="show">
                                     <div class="figure">
                                         <h3>Полинезия и маори в несколько строчек</h3>
                                         <button class="liked">
-                                            <img src="/img/icon/like.png" alt="">12
+                                            <img src="img/icon/like.png" alt="">12
                                         </button>
                                         <p>Их наносили только мужчины и только по конкретному поводу Их наносили только мужчины и только по конкретному поводу Их наносили только мужчины и только по конкретному поводу</p>
                                         <div style="text-align: center;">
@@ -1390,16 +1369,16 @@ use \frontend\widgets\LanguageSelector;
                                 </div>
                             </div>
                             <div class="item">
-                                <img data-src="/img/akl/Middle/5.png" src="/img/tatu/5.png" alt=""  class="uvl">
+                                <img data-src="img/akl/Middle/5.png" src="img/tatu/5.png" alt=""  class="uvl">
                                 <button class="save">Сохранить</button>
                                 <button class="like">
-                                    <img src="/img/icon/like.png" alt="">
+                                    <img src="img/icon/like.png" alt="">
                                 </button>
                                 <div class="show">
                                     <div class="figure">
                                         <h3>Полинезия и маори в несколько строчек</h3>
                                         <button class="liked">
-                                            <img src="/img/icon/like.png" alt="">12
+                                            <img src="img/icon/like.png" alt="">12
                                         </button>
                                         <p>Их наносили только мужчины и только по конкретному поводу Их наносили только мужчины и только по конкретному поводу Их наносили только мужчины и только по конкретному поводу</p>
                                         <div style="text-align: center;">
@@ -1409,16 +1388,16 @@ use \frontend\widgets\LanguageSelector;
                                 </div>
                             </div>
                             <div class="item">
-                                <img data-src="/img/akl/Middle/6.png" src="/img/tatu/6.png" alt=""  class="uvl">
+                                <img data-src="img/akl/Middle/6.png" src="img/tatu/6.png" alt=""  class="uvl">
                                 <button class="save">Сохранить</button>
                                 <button class="like">
-                                    <img src="/img/icon/like.png" alt="">
+                                    <img src="img/icon/like.png" alt="">
                                 </button>
                                 <div class="show">
                                     <div class="figure">
                                         <h3>Полинезия и маори в несколько строчек</h3>
                                         <button class="liked">
-                                            <img src="/img/icon/like.png" alt="">12
+                                            <img src="img/icon/like.png" alt="">12
                                         </button>
                                         <p>Их наносили только мужчины и только по конкретному поводу Их наносили только мужчины и только по конкретному поводу Их наносили только мужчины и только по конкретному поводу</p>
                                         <div style="text-align: center;">
@@ -1428,16 +1407,16 @@ use \frontend\widgets\LanguageSelector;
                                 </div>
                             </div>
                             <div class="item">
-                                <img data-src="/img/akl/Middle/7.png" src="/img/tatu/7.png" alt="" class="uvl">
+                                <img data-src="img/akl/Middle/7.png" src="img/tatu/7.png" alt="" class="uvl">
                                 <button class="save">Сохранить</button>
                                 <button class="like">
-                                    <img src="/img/icon/like.png" alt="">
+                                    <img src="img/icon/like.png" alt="">
                                 </button>
                                 <div class="show">
                                     <div class="figure">
                                         <h3>Полинезия и маори в несколько строчек</h3>
                                         <button class="liked">
-                                            <img src="/img/icon/like.png" alt="">12
+                                            <img src="img/icon/like.png" alt="">12
                                         </button>
                                         <p>Их наносили только мужчины и только по конкретному поводу Их наносили только мужчины и только по конкретному поводу Их наносили только мужчины и только по конкретному поводу</p>
                                         <div style="text-align: center;">
@@ -1447,16 +1426,16 @@ use \frontend\widgets\LanguageSelector;
                                 </div>
                             </div>
                             <div class="item">
-                                <img data-src="/img/akl/Middle/8.png" src="/img/tatu/8.png" alt=""  class="uvl">
+                                <img data-src="img/akl/Middle/8.png" src="img/tatu/8.png" alt=""  class="uvl">
                                 <button class="save">Сохранить</button>
                                 <button class="like">
-                                    <img src="/img/icon/like.png" alt="">
+                                    <img src="img/icon/like.png" alt="">
                                 </button>
                                 <div class="show">
                                     <div class="figure">
                                         <h3>Полинезия и маори в несколько строчек</h3>
                                         <button class="liked">
-                                            <img src="/img/icon/like.png" alt="">12
+                                            <img src="img/icon/like.png" alt="">12
                                         </button>
                                         <p>Их наносили только мужчины и только по конкретному поводу Их наносили только мужчины и только по конкретному поводу Их наносили только мужчины и только по конкретному поводу</p>
                                         <div style="text-align: center;">
@@ -1469,7 +1448,7 @@ use \frontend\widgets\LanguageSelector;
                         <div class="punctir">
                             <a href="http://verstka.integratic.ru/tatu-2/#" class="punctirspan">Показать все популярные наклеки
                                 <i class="material-icons">
-                                    <img src="/img/icon/arrow-down.png" alt="down">
+                                    <img src="img/icon/arrow-down.png" alt="down">
                                 </i>
                             </a>
                         </div>
@@ -1482,16 +1461,16 @@ use \frontend\widgets\LanguageSelector;
                         </div>
                         <div class="grid">
                             <div class="item">
-                                <img data-src="/img/akl/Middle/9.png" src="/img/tatu/9.png" alt="" class="uvl">
+                                <img data-src="img/akl/Middle/9.png" src="img/tatu/9.png" alt="" class="uvl">
                                 <button class="save">Сохранить</button>
                                 <button class="like">
-                                    <img src="/img/icon/like.png" alt="">
+                                    <img src="img/icon/like.png" alt="">
                                 </button>
                                 <div class="show">
                                     <div class="figure">
                                         <h3>Полинезия и маори в несколько строчек</h3>
                                         <button class="liked">
-                                            <img src="/img/icon/like.png" alt="">12
+                                            <img src="img/icon/like.png" alt="">12
                                         </button>
                                         <p>Их наносили только мужчины и только по конкретному поводу Их наносили только мужчины и только по конкретному поводу Их наносили только мужчины и только по конкретному поводу</p>
                                         <div style="text-align: center;">
@@ -1501,16 +1480,16 @@ use \frontend\widgets\LanguageSelector;
                                 </div>
                             </div>
                             <div class="item">
-                                <img data-src="/img/akl/Middle/10.png" src="/img/tatu/10.png" alt=""  class="uvl">
+                                <img data-src="img/akl/Middle/10.png" src="img/tatu/10.png" alt=""  class="uvl">
                                 <button class="save">Сохранить</button>
                                 <button class="like">
-                                    <img src="/img/icon/like.png" alt="">
+                                    <img src="img/icon/like.png" alt="">
                                 </button>
                                 <div class="show">
                                     <div class="figure">
                                         <h3>Полинезия и маори в несколько строчек</h3>
                                         <button class="liked">
-                                            <img src="/img/icon/like.png" alt="">12
+                                            <img src="img/icon/like.png" alt="">12
                                         </button>
                                         <p>Их наносили только мужчины и только по конкретному поводу Их наносили только мужчины и только по конкретному поводу Их наносили только мужчины и только по конкретному поводу</p>
                                         <div style="text-align: center;">
@@ -1520,16 +1499,16 @@ use \frontend\widgets\LanguageSelector;
                                 </div>
                             </div>
                             <div class="item">
-                                <img data-src="/img/akl/Middle/11.png" src="/img/tatu/11.png" alt=""  class="uvl">
+                                <img data-src="img/akl/Middle/11.png" src="img/tatu/11.png" alt=""  class="uvl">
                                 <button class="save">Сохранить</button>
                                 <button class="like">
-                                    <img src="/img/icon/like.png" alt="">
+                                    <img src="img/icon/like.png" alt="">
                                 </button>
                                 <div class="show">
                                     <div class="figure">
                                         <h3>Полинезия и маори в несколько строчек</h3>
                                         <button class="liked">
-                                            <img src="/img/icon/like.png" alt="">12
+                                            <img src="img/icon/like.png" alt="">12
                                         </button>
                                         <p>Их наносили только мужчины и только по конкретному поводу Их наносили только мужчины и только по конкретному поводу Их наносили только мужчины и только по конкретному поводу</p>
                                         <div style="text-align: center;">
@@ -1539,16 +1518,16 @@ use \frontend\widgets\LanguageSelector;
                                 </div>
                             </div>
                             <div class="item">
-                                <img data-src="/img/akl/Middle/12.png" src="/img/tatu/12.png" alt=""  class="uvl">
+                                <img data-src="img/akl/Middle/12.png" src="img/tatu/12.png" alt=""  class="uvl">
                                 <button class="save">Сохранить</button>
                                 <button class="like">
-                                    <img src="/img/icon/like.png" alt="">
+                                    <img src="img/icon/like.png" alt="">
                                 </button>
                                 <div class="show">
                                     <div class="figure">
                                         <h3>Полинезия и маори в несколько строчек</h3>
                                         <button class="liked">
-                                            <img src="/img/icon/like.png" alt="">12
+                                            <img src="img/icon/like.png" alt="">12
                                         </button>
                                         <p>Их наносили только мужчины и только по конкретному поводу Их наносили только мужчины и только по конкретному поводу Их наносили только мужчины и только по конкретному поводу</p>
                                         <div style="text-align: center;">
@@ -1558,16 +1537,16 @@ use \frontend\widgets\LanguageSelector;
                                 </div>
                             </div>
                             <div class="item">
-                                <img data-src="/img/akl/Middle/13.png" src="/img/tatu/13.png" alt=""  class="uvl">
+                                <img data-src="img/akl/Middle/13.png" src="img/tatu/13.png" alt=""  class="uvl">
                                 <button class="save">Сохранить</button>
                                 <button class="like">
-                                    <img src="/img/icon/like.png" alt="">
+                                    <img src="img/icon/like.png" alt="">
                                 </button>
                                 <div class="show">
                                     <div class="figure">
                                         <h3>Полинезия и маори в несколько строчек</h3>
                                         <button class="liked">
-                                            <img src="/img/icon/like.png" alt="">12
+                                            <img src="img/icon/like.png" alt="">12
                                         </button>
                                         <p>Их наносили только мужчины и только по конкретному поводу Их наносили только мужчины и только по конкретному поводу Их наносили только мужчины и только по конкретному поводу</p>
                                         <div style="text-align: center;">
@@ -1577,16 +1556,16 @@ use \frontend\widgets\LanguageSelector;
                                 </div>
                             </div>
                             <div class="item">
-                                <img data-src="/img/akl/Middle/14.png" src="/img/tatu/14.png" alt=""  class="uvl">
+                                <img data-src="img/akl/Middle/14.png" src="img/tatu/14.png" alt=""  class="uvl">
                                 <button class="save">Сохранить</button>
                                 <button class="like">
-                                    <img src="/img/icon/like.png" alt="">
+                                    <img src="img/icon/like.png" alt="">
                                 </button>
                                 <div class="show">
                                     <div class="figure">
                                         <h3>Полинезия и маори в несколько строчек</h3>
                                         <button class="liked">
-                                            <img src="/img/icon/like.png" alt="">12
+                                            <img src="img/icon/like.png" alt="">12
                                         </button>
                                         <p>Их наносили только мужчины и только по конкретному поводу Их наносили только мужчины и только по конкретному поводу Их наносили только мужчины и только по конкретному поводу</p>
                                         <div style="text-align: center;">
@@ -1596,16 +1575,16 @@ use \frontend\widgets\LanguageSelector;
                                 </div>
                             </div>
                             <div class="item">
-                                <img data-src="/img/akl/Middle/15.png" src="/img/tatu/15.png" alt=""  class="uvl">
+                                <img data-src="img/akl/Middle/15.png" src="img/tatu/15.png" alt=""  class="uvl">
                                 <button class="save">Сохранить</button>
                                 <button class="like">
-                                    <img src="/img/icon/like.png" alt="">
+                                    <img src="img/icon/like.png" alt="">
                                 </button>
                                 <div class="show">
                                     <div class="figure">
                                         <h3>Полинезия и маори в несколько строчек</h3>
                                         <button class="liked">
-                                            <img src="/img/icon/like.png" alt="">12
+                                            <img src="img/icon/like.png" alt="">12
                                         </button>
                                         <p>Их наносили только мужчины и только по конкретному поводу Их наносили только мужчины и только по конкретному поводу Их наносили только мужчины и только по конкретному поводу</p>
                                         <div style="text-align: center;">
@@ -1615,16 +1594,16 @@ use \frontend\widgets\LanguageSelector;
                                 </div>
                             </div>
                             <div class="item">
-                                <img data-src="/img/akl/Middle/4.png" src="/img/tatu/4.png" alt=""  class="uvl">
+                                <img data-src="img/akl/Middle/4.png" src="img/tatu/4.png" alt=""  class="uvl">
                                 <button class="save">Сохранить</button>
                                 <button class="like">
-                                    <img src="/img/icon/like.png" alt="">
+                                    <img src="img/icon/like.png" alt="">
                                 </button>
                                 <div class="show">
                                     <div class="figure">
                                         <h3>Полинезия и маори в несколько строчек</h3>
                                         <button class="liked">
-                                            <img src="/img/icon/like.png" alt="">12
+                                            <img src="img/icon/like.png" alt="">12
                                         </button>
                                         <p>Их наносили только мужчины и только по конкретному поводу Их наносили только мужчины и только по конкретному поводу Их наносили только мужчины и только по конкретному поводу</p>
                                         <div style="text-align: center;">
@@ -1637,7 +1616,7 @@ use \frontend\widgets\LanguageSelector;
                         <div class="punctir">
                             <a href="http://verstka.integratic.ru/tatu-2/#" class="punctirspan">Показать все новые наклейки
                                 <i class="material-icons">
-                                    <img src="/img/icon/arrow-down.png" alt="down">
+                                    <img src="img/icon/arrow-down.png" alt="down">
                                 </i>
                             </a>
                         </div>
@@ -1663,16 +1642,16 @@ use \frontend\widgets\LanguageSelector;
                         <div class="head_title">Рекомендованные</div>
                         <div class="right-grid paddi">
                             <div class="right-item item">
-                                <img data-src="/img/akl/Middle/1.png" src="/img/tatu/1.png" class="uvl" alt="">
+                                <img data-src="img/akl/Middle/1.png" src="img/tatu/1.png" class="uvl" alt="">
                                 <button class="save">Сохранить</button>
                                 <button class="like">
-                                    <img src="/img/icon/like.png" alt="">
+                                    <img src="img/icon/like.png" alt="">
                                 </button>
                                 <div class="show">
                                     <div class="figure">
                                         <h3>Полинезия и маори в несколько строчек</h3>
                                         <button class="liked">
-                                            <img src="/img/icon/like.png" alt="">12
+                                            <img src="img/icon/like.png" alt="">12
                                         </button>
                                         <p>Их наносили только мужчины и только по конкретному поводу Их наносили только мужчины и только по конкретному поводу Их наносили только мужчины и только по конкретному поводу</p>
                                         <div style="text-align: center;">
@@ -1682,16 +1661,16 @@ use \frontend\widgets\LanguageSelector;
                                 </div>
                             </div>
                             <div class="right-item item">
-                                <img data-src="/img/akl/Middle/2.png" src="/img/tatu/2.png" class="uvl" alt="">
+                                <img data-src="img/akl/Middle/2.png" src="img/tatu/2.png" class="uvl" alt="">
                                 <button class="save">Сохранить</button>
                                 <button class="like">
-                                    <img src="/img/icon/like.png" alt="">
+                                    <img src="img/icon/like.png" alt="">
                                 </button>
                                 <div class="show">
                                     <div class="figure">
                                         <h3>Полинезия и маори в несколько строчек</h3>
                                         <button class="liked">
-                                            <img src="/img/icon/like.png" alt="">12
+                                            <img src="img/icon/like.png" alt="">12
                                         </button>
                                         <p>Их наносили только мужчины и только по конкретному поводу Их наносили только мужчины и только по конкретному поводу Их наносили только мужчины и только по конкретному поводу</p>
                                         <div style="text-align: center;">
@@ -1701,16 +1680,16 @@ use \frontend\widgets\LanguageSelector;
                                 </div>
                             </div>
                             <div class="right-item item">
-                                <img data-src="/img/akl/Middle/3.png" src="/img/tatu/3.png" class="uvl" alt="">
+                                <img data-src="img/akl/Middle/3.png" src="img/tatu/3.png" class="uvl" alt="">
                                 <button class="save">Сохранить</button>
                                 <button class="like">
-                                    <img src="/img/icon/like.png" alt="">
+                                    <img src="img/icon/like.png" alt="">
                                 </button>
                                 <div class="show">
                                     <div class="figure">
                                         <h3>Полинезия и маори в несколько строчек</h3>
                                         <button class="liked">
-                                            <img src="/img/icon/like.png" alt="">12
+                                            <img src="img/icon/like.png" alt="">12
                                         </button>
                                         <p>Их наносили только мужчины и только по конкретному поводу Их наносили только мужчины и только по конкретному поводу Их наносили только мужчины и только по конкретному поводу</p>
                                         <div style="text-align: center;">
@@ -1720,16 +1699,16 @@ use \frontend\widgets\LanguageSelector;
                                 </div>
                             </div>
                             <div class="right-item item">
-                                <img data-src="/img/akl/Middle/4.png" src="/img/tatu/4.png" class="uvl" alt="">
+                                <img data-src="img/akl/Middle/4.png" src="img/tatu/4.png" class="uvl" alt="">
                                 <button class="save">Сохранить</button>
                                 <button class="like">
-                                    <img src="/img/icon/like.png" alt="">
+                                    <img src="img/icon/like.png" alt="">
                                 </button>
                                 <div class="show">
                                     <div class="figure">
                                         <h3>Полинезия и маори в несколько строчек</h3>
                                         <button class="liked">
-                                            <img src="/img/icon/like.png" alt="">12
+                                            <img src="img/icon/like.png" alt="">12
                                         </button>
                                         <p>Их наносили только мужчины и только по конкретному поводу Их наносили только мужчины и только по конкретному поводу Их наносили только мужчины и только по конкретному поводу</p>
                                         <div style="text-align: center;">
@@ -1741,7 +1720,7 @@ use \frontend\widgets\LanguageSelector;
                         </div>
                         <div class="show-more">
                             <a href="http://verstka.integratic.ru/tatu-2/#">Показать все рекомендованные наклеки
-                                <img src="/img/icon/arrow-down.png" alt="down">
+                                <img src="img/icon/arrow-down.png" alt="down">
                             </a>
                         </div>
                     </div>
@@ -1750,45 +1729,45 @@ use \frontend\widgets\LanguageSelector;
         </div>
     </div>
     <div class="popup-item-block">
-        <img src="/img/icon/closepopup.png" class="closepopup" alt="">
+        <img src="img/icon/closepopup.png" class="closepopup" alt="">
         <h4>Вы выбрали:</h4>
         <div class="popup-item-gl">
             <div class="popup-item">
                 <div class="for-img">
-                    <img src="/img/tatu/1.png" class="imgvsp" alt="">
+                    <img src="img/tatu/1.png" class="imgvsp" alt="">
                 </div>
                 <div class="for-text">
                     <h4>Полиезия и маори</h4>
                     <p>Их наносили только мужчины и только по конкретному поводу</p>
                 </div>
                 <div class="clossse">
-                    <img src="/img/icon/close.png" alt="" class="closee">
+                    <img src="img/icon/close.png" alt="" class="closee">
                     <div class="helping">Удалить из корзины</div>
                 </div>
             </div>
             <div class="popup-item">
                 <div class="for-img">
-                    <img src="/img/tatu/1.png" class="imgvsp" alt="">
+                    <img src="img/tatu/1.png" class="imgvsp" alt="">
                 </div>
                 <div class="for-text">
                     <h4>Полиезия и маори</h4>
                     <p>Их наносили только мужчины и только по конкретному поводу</p>
                 </div>
                 <div class="clossse">
-                    <img src="/img/icon/close.png" alt="" class="closee">
+                    <img src="img/icon/close.png" alt="" class="closee">
                     <div class="helping">Удалить из корзины</div>
                 </div>
             </div>
             <div class="popup-item">
                 <div class="for-img">
-                    <img src="/img/tatu/1.png" class="imgvsp" alt="">
+                    <img src="img/tatu/1.png" class="imgvsp" alt="">
                 </div>
                 <div class="for-text">
                     <h4>Полиезия и маори</h4>
                     <p>Их наносили только мужчины и только по конкретному поводу</p>
                 </div>
                 <div class="clossse">
-                    <img src="/img/icon/close.png" alt="" class="closee">
+                    <img src="img/icon/close.png" alt="" class="closee">
                     <div class="helping">Удалить из корзины</div>
                 </div>
             </div>
@@ -1797,35 +1776,35 @@ use \frontend\widgets\LanguageSelector;
         <a href="#" class="holst">Добавить на холст</a>
         <a class="clsse">Закрыть</a>
         <div class="svernut">Показать все выбранные элементы</div>
-        <img src="/img/icon/arrow-down.png" class="down" alt="">
+        <img src="img/icon/arrow-down.png" class="down" alt="">
     </div>
     <div class="popup-main">
         <div class="popupuvl">
-            <img src="/img/icon/closse.png" class="csa" alt="">
+            <img src="img/icon/closse.png" class="csa" alt="">
             <div class="imgbl">
-                <img src="/img/" style="width: 540px;" alt="">
+                <img src="img/" style="width: 540px;" alt="">
                 <div class="save ty">Сохранить</div>
                 <div class="likeq">
-                    <img src="/img/icon/like.png" alt="">
+                    <img src="img/icon/like.png" alt="">
                 </div>
             </div>
             <div class="h3">
                 <h3>Полиезия и маори в несколько строчек</h3>
                 <div class="like">
-                    <img src="/img/icon/like.png" alt=""> 12
+                    <img src="img/icon/like.png" alt=""> 12
                 </div>
                 <p>Их наносили только мужчины и только по конкретному поводуИх наносили только мужчины и только по конкретному поводуИх наносили только мужчины и только по конкретному поводуИх наносили только мужчины и только по конкретному поводуИх наносили только мужчины и только по конкретному поводуИх наносили только мужчины и только по конкретному поводуИх наносили только мужчины и только по конкретному поводу</p>
                 <div class="vod">
                     <div class="lef">
-                        <div><img src="/img/icon/1.png" alt=""><div>Стена</div></div>
-                        <div><img src="/img/icon/meb.png" alt=""><div>Мебель</div></div>
-                        <div><img src="/img/icon/oboi.png" alt=""><div>Обои</div></div>
-                        <div><img src="/img/icon/posud.png" alt=""><div>Посуда</div></div>
-                        <div><img src="/img/icon/kaf.png" alt=""><div>Кафель</div></div>
-                        <div><img src="/img/icon/odej.png" alt=""><div>Одежда</div></div>
+                        <div><img src="img/icon/1.png" alt=""><div>Стена</div></div>
+                        <div><img src="img/icon/meb.png" alt=""><div>Мебель</div></div>
+                        <div><img src="img/icon/oboi.png" alt=""><div>Обои</div></div>
+                        <div><img src="img/icon/posud.png" alt=""><div>Посуда</div></div>
+                        <div><img src="img/icon/kaf.png" alt=""><div>Кафель</div></div>
+                        <div><img src="img/icon/odej.png" alt=""><div>Одежда</div></div>
                     </div>
                     <div class="rig">
-                        <img src="/img/icon/max.png" alt="">Максимальный размер изображения - формат А4 (297мм x 210мм)
+                        <img src="img/icon/max.png" alt="">Максимальный размер изображения - формат А4 (297мм x 210мм)
                     </div>
                 </div>
                 <div class="zake">
@@ -1841,7 +1820,7 @@ use \frontend\widgets\LanguageSelector;
         <div class="just-between t-container p20">
             <div class="logo">
                 <a href="http://verstka.integratic.ru/tatu-2/">
-                    <img src="/img/logo.png" alt="" class="mli">
+                    <img src="img/logo.png" alt="" class="mli">
                 </a>
                 <p class="logo">Интернет-магазин наклеек</p>
                 <p>© Все права защищены 2017</p>
@@ -1858,29 +1837,29 @@ use \frontend\widgets\LanguageSelector;
             <div class="pay">
                 <span>Способы оплаты</span>
                 <ul>
-                    <li><img src="/img/icon/paypal.png" alt="" id="paypall"></li>
-                    <li><img src="/img/icon/visa.png" alt=""></li>
-                    <li><img src="/img/icon/mastercard.png" alt=""></li>
+                    <li><img src="img/icon/paypal.png" alt="" id="paypall"></li>
+                    <li><img src="img/icon/visa.png" alt=""></li>
+                    <li><img src="img/icon/mastercard.png" alt=""></li>
                 </ul>
                 <ul>
                     <li class="text">Способы доставки</li>
-                    <li class="img"><img src="/img/icon/us-mail.png" alt=""></li>
+                    <li class="img"><img src="img/icon/us-mail.png" alt=""></li>
                 </ul>
             </div>
             <div class="social">
-                <img src="/img/icon/email.png" alt="icon">
+                <img src="img/icon/email.png" alt="icon">
                 <a href="mailto:4545600@mail.ru" target="_top">4545600@mail.ru</a>
                 <div class="soc">
                     <span>Мы в соцсетях: </span>
                     <ul>
                         <li>
                             <a href="https://www.facebook.com/" target="_blank">
-                                <img src="/img/icon/facebook.png" alt="">
+                                <img src="img/icon/facebook.png" alt="">
                             </a>
                         </li>
                         <li>
                             <a href="https://www.facebook.com/" target="_blank">
-                                <img src="/img/icon/instagram.png" alt="">
+                                <img src="img/icon/instagram.png" alt="">
                             </a>
                         </li>
                     </ul>
@@ -1890,20 +1869,14 @@ use \frontend\widgets\LanguageSelector;
     </footer>
 </div>
 <div id="loader"></div>
-
 <!-- JavaScript-->
-<link rel="stylesheet" href="/css/style.css">
-<link rel="stylesheet" href="/css/Dima-style.css">
-<script src="/js/jquery-3.2.1.min.js"></script>
-<script src="/js/owl.carousel.min.js"></script>
-<script src="/js/jquery.fancybox.min.js"></script>
-<script src="/js/script.js"></script>
-<link rel="shortcut icon" href="/img/favicon/favicon.ico" type="image/x-icon">
-<link rel="stylesheet" type="text/css" href="/css/jquery.fancybox.css">
-
-
-
-<?php $this->endBody() ?>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/Dima-style.css">
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/jquery.fancybox.min.js"></script>
+<script src="js/script.js"></script>
+<link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="css/jquery.fancybox.min.css">
 </body>
 </html>
-<?php $this->endPage() ?>

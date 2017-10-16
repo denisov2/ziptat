@@ -5,7 +5,8 @@ use yii\widgets\ActiveForm;
 use vova07\imperavi\Widget;
 use \yii\helpers\Url;
 use kartik\widgets\FileInput;
-
+use common\models\Label;
+use common\models\Subcategory;
 /* @var $this yii\web\View */
 /* @var $model common\models\Label */
 /* @var $form yii\widgets\ActiveForm */
@@ -20,13 +21,18 @@ use kartik\widgets\FileInput;
             <?= $form->field($model, 'slug')->textInput(['maxlength' => true]) ?>
         </div>
         <div class="col-md-3">
-            <?= $form->field($model, 'subcategory_id')->textInput() ?>
+            <?=
+
+           // $form->field($model, 'subcategory_id')->textInput();
+
+            $form->field($model, 'subcategory_id')->dropDownList(Subcategory::getItemsAsArray(), ['promt'=> Yii::t('common', 'Select category')]);
+            ?>
         </div>
         <div class="col-md-3">
-            <?= $form->field($model, 'active')->textInput() ?>
+            <?= $form->field($model, 'active')->checkbox() ?>
         </div>
         <div class="col-md-3">
-            <?= $form->field($model, 'status')->textInput() ?>
+            <?= $form->field($model, 'status')->dropDownList(Label::getStatusesAsArray(), ['promt' => Yii::t('common', 'Select labels status')]) ?>
         </div>
     </div>
 
@@ -70,14 +76,6 @@ use kartik\widgets\FileInput;
     <div class="row">
         <div class="col-md-6">
 
-            <?php
-
-            if(!empty($model->image_original)){
-                echo Html::img($model->image_original, $options = ['class' => '', 'style' => ['max-width'=>'100%']]);
-            } ?>
-
-
-
             <?= $form->field($model, 'file_image')->widget(FileInput::classname(), [
                 'options' => ['accept' => 'image/*'],
                 'pluginOptions' => [
@@ -87,6 +85,44 @@ use kartik\widgets\FileInput;
                     'showUpload' => false
                 ]
             ]); ?>
+
+
+            <?php
+
+            if(!empty($model->image_original)){
+
+                if($model->isImageExist(Label::THUMBNAIL_FOLDER)) {
+                    echo "<h4>".Yii::t('common' , 'Thumbnail image')."</h4>";
+                    echo $model->getImageInfo(Label::THUMBNAIL_FOLDER);
+                    echo Html::img($model->getImageUrl(Label::THUMBNAIL_FOLDER), $options = ['class' => '', 'style' => ['max-width' => '900px']]);
+                }
+
+                if($model->isImageExist(Label::MIDDLE_FOLDER)) {
+                    echo "<h4>".Yii::t('common' , 'Middle image')."</h4>";
+                    echo $model->getImageInfo(Label::MIDDLE_FOLDER);
+                    echo Html::img($model->getImageUrl(Label::MIDDLE_FOLDER), $options = ['class' => '', 'style' => ['max-width' => '900x']]);
+                }
+
+
+
+                if($model->isImageExist(Label::BIG_FOLDER)) {
+                    echo "<h4>".Yii::t('common' , 'Big image')."</h4>";
+                    echo $model->getImageInfo(Label::BIG_FOLDER);
+                    echo Html::img($model->getImageUrl(Label::BIG_FOLDER), $options = ['class' => '', 'style' => ['max-width' => '900px']]);
+                }
+
+
+                if($model->isImageExist()) {
+
+                    echo "<h4>".Yii::t('common' , 'Original image')."</h4>";
+                    echo $model->getImageInfo();
+                    echo Html::img($model->getImageUrl(), $options = ['class' => '', 'style' => ['max-width' => '900px']]);
+                }
+            } ?>
+
+
+
+
 
         </div>
     </div>

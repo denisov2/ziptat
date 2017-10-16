@@ -3,6 +3,7 @@
 namespace common\models;
 
 use Yii;
+use yii\helpers\ArrayHelper;
 
 /**
  * This is the model class for table "subcategory".
@@ -73,5 +74,10 @@ class Subcategory extends \yii\db\ActiveRecord
     public function getCategory()
     {
         return $this->hasOne(Category::className(), ['id' => 'category_id']);
+    }
+
+    static public function getItemsAsArray()
+    {
+        return ArrayHelper::map(self::find()->all(), 'id', 'name_'.Yii::$app->language);
     }
 }
