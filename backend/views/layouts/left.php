@@ -45,6 +45,7 @@
 
 
 
+                    ['label' => Yii::t('common', 'Pages'), 'icon' => 'circle-o', 'url' => ['/pages/manager'],],
                     ['label' => Yii::t('common', 'News'), 'icon' => 'circle-o', 'url' => ['/news'],],
                     ['label' => Yii::t('common', 'Articles'), 'icon' => 'circle-o', 'url' => ['/article'],],
                     ['label' => Yii::t('common', 'Top Menu'), 'icon' => 'circle-o', 'url' => ['/menu'],],

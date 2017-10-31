@@ -12,8 +12,7 @@
         "irc": "irc://irc.freenode.net/yii",
         "source": "https://github.com/yiisoft/yii2"
     },
-
-    "minimum-stability": "dev",
+     "minimum-stability": "dev",
     "prefer-stable" : true,
 
     "require": {
@@ -29,9 +28,9 @@
         "2amigos/yii2-usuario": "~1.0",
         "codemix/yii2-localeurls": "*",
         "omnilight/yii2-shopping-cart": "*",
-        "tigrov/yii2-country": "*",
         "dvizh/yii2-cart": "*",
-        "tpmanc/yii2-imagick": "*"
+        "tpmanc/yii2-imagick": "*",
+		"bupy7/yii2-pages": "*"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
@@ -41,6 +40,7 @@
         "codeception/base": "^2.2.3",
         "codeception/verify": "~0.3.1"
     },
+	
     "config": {
         "process-timeout": 1800,
         "fxp-asset":{

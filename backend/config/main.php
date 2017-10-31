@@ -58,6 +58,7 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+
             ],
         ],
 
@@ -68,6 +69,10 @@ return [
             'baseUrl' => '/',
             'enablePrettyUrl' => true,
             'showScriptName' => false,
+            'rules' => [
+
+                'page/<page:[\w-]+>' => 'pages/default/index',
+            ],
         ],
 
 

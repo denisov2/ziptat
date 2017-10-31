@@ -37,5 +37,11 @@ return [
     'Html Blocks (Widgets)' => 'Html блоки (Виджеты)',
     'Site Options' => 'Настройки сайта',
 
+    'Stickers and their meaning' => 'Наклейки и их значение',
+
+    'Selecting a sticker for application is a complex process. The true meaning of the symbol is open only to its owner, but it is much easier to find this symbol amongst the many stickers in our catalog.'
+    => 'Выбор наклеки для нанесения — это сложный процесс. Истинное значение символа открыто только для его владельца, но намного проще найти для себя этот символ среди многих представленных наклеки в нашем каталоге.',
+
+
 
 ];

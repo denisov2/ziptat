@@ -49,45 +49,25 @@ use \frontend\widgets\RegistrationPopup;
     <?= $this->render('_header'); ?>
 
 
-    <div class="content">
+    <!-- Registration popup -->
+    <?= RegistrationPopup::widget(); ?>
 
-        <!-- Registration popup -->
-        <?= RegistrationPopup::widget(); ?>
+    <div class="kontacblock">
 
-        <div class="t-container">
-            <div class="row">
-                <div class="col-2">
-                    <div class="checkbox-left">
+        <h2><?= Html::encode($this->title) ?></h2>
 
-                        <?= \frontend\widgets\Breadcrumbs::widget(); ?>
+        <?= \frontend\widgets\Breadcrumbs::widget(); ?>
 
-                        <?= \frontend\widgets\LeftMenu::widget(); ?>
+        <div class="centerdiv">
 
-                    </div>
-                </div>
-                <div class="col-8 photo-grid mlr">
-                    <div class="paddingbox">
-
-                        <?= Alert::widget() ?>
-
-
-                        <?= $content ?>
-
-
-                    </div>
-                </div>
-                <div class="col-2">
-
-                    <?= \frontend\widgets\RightColumn::widget(); ?>
-
-                </div>
-            </div>
-
+            <?= $content ?>
 
         </div>
-        <?= $this->render('_popups') ?>
-        <?= $this->render('_footer') ?>
     </div>
+
+    <?= $this->render('_popups') ?>
+    <?= $this->render('_footer') ?>
+
 
     <div id="loader"></div>
 
@@ -98,7 +78,6 @@ use \frontend\widgets\RegistrationPopup;
     <script src="/js/owl.carousel.min.js"></script>
     <script src="/js/jquery.fancybox.min.js"></script>
     <script src="/js/script.js"></script>
-    <script src="/js/filter.js"></script>
     <link rel="shortcut icon" href="/img/favicon/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="/css/jquery.fancybox.css">
 

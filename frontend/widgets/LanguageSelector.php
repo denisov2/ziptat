@@ -36,7 +36,7 @@ class LanguageSelector extends Widget
         foreach (Yii::$app->urlManager->languages as $language) {
             $isWildcard = substr($language, -2) === '-*';
             if (
-                $language === $appLanguage ||
+                // $language === $appLanguage ||
                 // Also check for wildcard language
                 $isWildcard && substr($appLanguage, 0, 2) === substr($language, 0, 2)
             ) {
@@ -49,6 +49,7 @@ class LanguageSelector extends Widget
             $this->items[] = [
                 'label' => self::label($language),
                 'url' => $params,
+                'active' => $language === $appLanguage
             ];
         }
         parent::init();
@@ -63,11 +64,22 @@ class LanguageSelector extends Widget
         } else {
 
             ob_start();
-            foreach ($this->items as $item) {
-                echo "<li class='language-picker'>";
-                echo Html::a($item['label'], [$item['url'][0], 'language' => $item['url']['language']]);
+            echo "<ul class='lang'>";
+            foreach ($this->items as $key=>$item) {
+                echo "<li>";
+                if($item['active']) {
+                    echo Html::a($item['label'] );
+                } else {
+                    echo "<span class='vnut'>";
+                    echo Html::a($item['label'], [$item['url'][0], 'language' => $item['url']['language']]);
+                    echo "</span>";
+                }
+
+                if( $key  != count ($this->items) -1 ) echo "&nbsp;|&nbsp;";
+
                 echo "</li>";
             }
+            echo "</ul>";
 
 
             $content = ob_get_clean();
@@ -80,8 +92,11 @@ class LanguageSelector extends Widget
         if (self::$_labels === null) {
             self::$_labels = [
 
-                'ru' => Yii::t('common', 'Русский'),
-                'en' => Yii::t('common', 'English'),
+                //'ru' => Yii::t('common', 'Русский'),
+                'ru' => 'RU',
+
+                //'en' => Yii::t('common', 'English'),
+                'en' => 'EN',
             ];
         }
 

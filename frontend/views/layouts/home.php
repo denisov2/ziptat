@@ -48,6 +48,12 @@ use \frontend\widgets\RegistrationPopup;
     <!-- header -->
     <?= $this->render('_header'); ?>
 
+    <!-- inner background image-->
+    <?= BannerMain::widget(); ?>
+
+    <!-- search -->
+    <?= SearchMain::widget(); ?>
+
 
     <div class="content">
 
@@ -99,6 +105,7 @@ use \frontend\widgets\RegistrationPopup;
     <script src="/js/jquery.fancybox.min.js"></script>
     <script src="/js/script.js"></script>
     <script src="/js/filter.js"></script>
+
     <link rel="shortcut icon" href="/img/favicon/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="/css/jquery.fancybox.css">
 

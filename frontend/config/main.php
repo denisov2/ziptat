@@ -49,6 +49,8 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                '/' => 'site/index',
+                'page/<page:[\w-]+>' => 'pages/default/index',
             ],
         ],
 
