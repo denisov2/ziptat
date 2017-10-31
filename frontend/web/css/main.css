@@ -1,0 +1,188 @@
+@import url("https://fonts.googleapis.com/css?family=PT+Sans:400,700");
+.t-container {
+  position: relative;
+  margin: 0 auto; }
+
+.row:after {
+  content: '';
+  display: block;
+  clear: both; }
+
+.col-2 {
+  float: left;
+  width: 16.366667%; }
+
+.col-8 {
+  float: left;
+  width: 66.666667%; }
+
+.mlr15 {
+  margin-right: 15px;
+  margin-left: 15px; }
+
+.p20 {
+  padding: 20px;
+  justify-content: space-around !important; }
+
+.just-between {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-box;
+  display: -webkit-flex;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center; }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+img {
+  max-width: 100%; }
+
+.wrappererror {
+  padding-top: 40px;
+  padding-bottom: 100px; }
+  .wrappererror .blockin {
+    max-width: 100%;
+    width: 1920px;
+    margin: 0 auto;
+    padding: 0 15px;
+    text-transform: uppercase; }
+    .wrappererror .blockin p.errorpar {
+      color: #0d1376;
+      font-size: 30px;
+      font-weight: bold; }
+    .wrappererror .blockin .breadcrumb {
+      font-family: "PT Sans";
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 48px;
+      color: #868484;
+      text-decoration: underline;
+      text-transform: capitalize; }
+      .wrappererror .blockin .breadcrumb .center {
+        color: #954156;
+        font-weight: bold;
+        text-decoration: none; }
+      .wrappererror .blockin .breadcrumb .right {
+        color: #0f1685;
+        text-decoration: none; }
+    .wrappererror .blockin .error {
+      text-align: center;
+      background: #fff;
+      padding-top: 140px;
+      padding-bottom: 65px; }
+      .wrappererror .blockin .error img {
+        display: block;
+        margin: 0 auto;
+        padding-bottom: 100px; }
+      .wrappererror .blockin .error span {
+        display: block;
+        padding-bottom: 40px;
+        color: #0d1376;
+        font-size: 25px;
+        font-family: "PT Sans", sans-serif;
+        font-weight: 400; }
+      .wrappererror .blockin .error a.btn-default {
+        color: #7d0535;
+        background: linear-gradient(to bottom, #fefefd, #e8e4cf);
+        padding: 15px 35px;
+        border: 2px #e6e2cc solid;
+        border-radius: 5px;
+        font-size: 17px;
+        line-height: 50px;
+        font-family: "PT Sans", sans-serif;
+        font-weight: 400; }
+        .wrappererror .blockin .error a.btn-default:hover {
+          background: #e9e6d2; }
+
+@media only screen and (max-width: 1024px) {
+  .wrappererror .blockin .error {
+    padding-top: 100px; }
+
+  .wrappererror .blockin .error img {
+    padding-bottom: 60px; } }
+@media only screen and (max-width: 480px) {
+  .wrappererror .blockin .error {
+    padding-top: 60px; } }
+@media only screen and (max-width: 375px) {
+  .wrappererror .blockin .error {
+    padding-top: 40px; } }
+.browser .browserblock {
+  max-width: 100%;
+  width: 1170px;
+  margin: 0 auto;
+  padding: 0 15px;
+  text-align: center;
+  padding-top: 45px;
+  padding-bottom: 60px;
+  font-family: "PT Sans", sans-serif;
+  font-weight: 400; }
+  .browser .browserblock h1 {
+    font-size: 30px;
+    color: #0d1376;
+    padding: 15px 0;
+    font-family: "PT Sans", sans-serif;
+    font-weight: 400; }
+  .browser .browserblock p {
+    padding-bottom: 30px;
+    font-size: 18px;
+    font-family: "PT Sans", sans-serif;
+    font-weight: 400; }
+  .browser .browserblock .browserimg {
+    max-width: 100%;
+    width: 525px;
+    display: inline-block;
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-bottom: 50px; }
+
+@media only screen and (max-width: 1024px) {
+  .browser .browserblock .browserimg {
+    width: 49%; } }
+@media only screen and (max-width: 1024px) {
+  .browser .browserblock .browserimg {
+    width: 100%; } }
+.issuesbl.grid {
+  padding-bottom: 100px; }
+  .issuesbl.grid .col-12 .checkbox-left .accarBodyblock.issues {
+    display: block !important; }
+    .issuesbl.grid .col-12 .checkbox-left .accarBodyblock.issues .accar.body-inner {
+      margin: 15px 0; }
+      .issuesbl.grid .col-12 .checkbox-left .accarBodyblock.issues .accar.body-inner:first-child {
+        margin-top: 0; }
+      .issuesbl.grid .col-12 .checkbox-left .accarBodyblock.issues .accar.body-inner h3 {
+        color: #454040;
+        padding: 15px 15px 15px 18px;
+        position: relative; }
+        .issuesbl.grid .col-12 .checkbox-left .accarBodyblock.issues .accar.body-inner h3:after {
+          content: '';
+          position: absolute;
+          z-index: 2;
+          width: 36px;
+          height: 20px;
+          right: 13px;
+          top: 39%;
+          background: url("../img/icon/arrow-down.png") 0 0 no-repeat; }
+        .issuesbl.grid .col-12 .checkbox-left .accarBodyblock.issues .accar.body-inner h3.transformcl:after {
+          transform: rotate(180deg); }
+      .issuesbl.grid .col-12 .checkbox-left .accarBodyblock.issues .accar.body-inner .container {
+        padding-right: 15px;
+        padding-left: 10px; }
+        .issuesbl.grid .col-12 .checkbox-left .accarBodyblock.issues .accar.body-inner .container .control-group p {
+          font-size: 14px;
+          font-family: "PT Sans", sans-serif;
+          font-weight: 400;
+          text-indent: 0;
+          line-height: 20px;
+          padding-bottom: 20px;
+          padding-right: 15px; }
+
+@media only screen and (max-width: 1024px) {
+  .issuesbl.grid .col-12 {
+    padding: 0; } }
+
+/*# sourceMappingURL=main.css.map */

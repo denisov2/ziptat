@@ -1,0 +1,47 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body{
+      margin:0;
+    }
+    body , html {
+      height:100%;
+    }
+    .wrapper{
+      position: relative;
+      min-height:100%;
+      background: #ccc;
+    }
+    #block{
+      position: absolute;
+      width:200px;
+      height:200px;
+      background: #f00;
+    }
+    </style>
+    </head>
+<body>
+    <div class="wrapper">
+      <div class="block" id="block" onMouseDown="move()" onKeyDown="stop()">
+      </div>
+    </div>
+    <script type="text/javascript">
+        var div = document.getElementById('block');
+var listener = function(e) {
+  div.style.left = e.pageX + "px";
+  div.style.top = e.pageY + "px";
+};
+
+function move() {
+  document.addEventListener('mousemove', listener);
+}
+
+function stop() {
+  document.removeEventListener('mousemove', listener);
+}
+    </script>
+</body>
+</html>
