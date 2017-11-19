@@ -58,40 +58,4 @@
     <img src="/img/icon/arrow-down.png" class="down" alt="">
 </div>
 
-<div class="popup-main">
-    <div class="popupuvl">
-        <img src="/img/icon/closse.png" class="csa" alt="">
-        <div class="imgbl">
-            <!-- <img src="/img/" style="width: 540px;" alt=""> -->
-            <div class="save ty">Сохранить</div>
-            <div class="likeq">
-                <img src="/img/icon/like.png" alt="">
-            </div>
-        </div>
-        <div class="h3">
-            <h3>Полиезия и маори в несколько строчек</h3>
-            <div class="like">
-                <img src="/img/icon/like.png" alt=""> 12
-            </div>
-            <p>Их наносили только мужчины и только по конкретному поводуИх наносили только мужчины и только по конкретному поводуИх наносили только мужчины и только по конкретному поводуИх наносили только мужчины и только по конкретному поводуИх наносили только мужчины и только по конкретному поводуИх наносили только мужчины и только по конкретному поводуИх наносили только мужчины и только по конкретному поводу</p>
-            <div class="vod">
-                <div class="lef">
-                    <div><img src="/img/icon/1.png" alt=""><div>Стена</div></div>
-                    <div><img src="/img/icon/meb.png" alt=""><div>Мебель</div></div>
-                    <div><img src="/img/icon/oboi.png" alt=""><div>Обои</div></div>
-                    <div><img src="/img/icon/posud.png" alt=""><div>Посуда</div></div>
-                    <div><img src="/img/icon/kaf.png" alt=""><div>Кафель</div></div>
-                    <div><img src="/img/icon/odej.png" alt=""><div>Одежда</div></div>
-                </div>
-                <div class="rig">
-                    <img src="/img/icon/max.png" alt="">Максимальный размер изображения - формат А4 (297мм x 210мм)
-                </div>
-            </div>
-            <div class="zake">
-                <div class="one">Заказать еще</div>
-                <div class="two">Оформить заказ</div>
-                <a class="impor-1" href="">Закрыть</a>
-            </div>
-        </div>
-    </div>
-</div>
+
