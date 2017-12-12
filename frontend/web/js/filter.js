@@ -29,7 +29,7 @@ function doFilter() {
     //url_params_array.push('search=flowers');
 
     console.log(url_params_array);
-    url_base = 'http://ziptat.ga/en/search/';
+    url_base = 'http://ziptat.ga/ru/search/';
     search_param = '?search=trees';
 
     var final_redirect = url_base + '?' +  url_params_array.join('&') ;

@@ -30,15 +30,21 @@ class SearchController extends Controller
     {
         $lang = Yii::$app->language;
         $subcategories_filter = Yii::$app->request->get('subcategories-filter');
+        $keyword = Yii::$app->request->get('keywords');
         $selected_subcategories_ids = $subcategories_filter ? explode(';', $subcategories_filter) : [];
+        $keywords = $keyword ? explode(' ', $keyword) : [];
 
         $names = [];
         foreach ($selected_subcategories_ids as $selected_subcategory_id) {
             $subcategory = Subcategory::findOne($selected_subcategory_id);
             $names[] = $subcategory->{"name_$lang"};
         }
-        $labels = Label::find()->where(['subcategory_id'=>$selected_subcategories_ids , 'active' => 1])->all();
-        $title = implode(", ", $names);
+        $labels = Label::find()
+            ->where(['active' => 1])
+            ->andFilterWhere(['subcategory_id'=>$selected_subcategories_ids  ])
+            ->andFilterWhere(['like', "name_$lang", $keywords])
+            ->all();
+        $title = $keyword . ' , ' . implode(", ", $names);
 
 
 

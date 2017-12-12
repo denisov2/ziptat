@@ -63,6 +63,19 @@ return [
                 ],
             ],
         ],
+        'cart' => [
+            'class' => dvizh\cart\Cart::className(),
+            'currency' => 'р.', //Валюта
+            'currencyPosition' => 'after', //after или before (позиция значка валюты относительно цены)
+            'priceFormat' => [2,'.', ''], //Форма цены
+        ],
+        //...
+    ],
+    'modules' => [
+        'cart' => [
+            'class' => dvizh\cart\Module::className(),
+        ],
+        //...
     ],
     'params' => $params,
 ];

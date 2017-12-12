@@ -48,6 +48,8 @@ class PopularLabels extends Widget
                     <img data-src="<?= $label->getImageUrl(Label::MIDDLE_FOLDER) ?>"
                          src="<?= $label->getImageUrl(Label::THUMBNAIL_FOLDER) ?>" alt="" class="uvl">
                     <button class="save">Сохранить</button>
+
+
                     <button class="like">
                         <img src="/img/icon/like.png" alt="">
                     </button>
@@ -58,6 +60,8 @@ class PopularLabels extends Widget
                                 <img src="/img/icon/like.png" alt=""><?=$label->likes?>
                             </button>
                             <?= $label->{"description_$this->lang"} ?>
+
+
                             <div style="text-align: center;">
                                 <button class="choose">Выбрать</button>
                             </div>
@@ -73,15 +77,24 @@ class PopularLabels extends Widget
                             <img src="/img/" style="width: 540px;" alt="">
 
                             <div class="save ty">Сохранить</div>
-                            <div class="likeq">
-                                <img src="/img/icon/like.png" alt="">
+                            <?= BuyButton::widget([
+                                'model' => $label,
+                                'text' => 'В корзину',
+                                'htmlTag' => 'Div',
+                                'cssClass' => 'add-to-cart'
+                            ]) ?>
+
+                                <div class="likeq"  data-product-id="<?= $label->id ?>">
+                                <img src="/img/icon/like.png" alt="" >
+                                    <span><?=$label->likes?></span>
                             </div>
                         </div>
                         <div class="h3">
                             <h3><?= $label->{"name_$this->lang"} ?></h3>
 
-                            <div class="like">
-                                <img src="/img/icon/like.png" alt=""> <?=$label->likes?>
+                            <div class="like" data-product-id="<?= $label->id ?>">
+                                <img src="/img/icon/like.png" alt=""  >
+                                <span><?=$label->likes?></span>
                             </div>
                             <?= $label->{"description_$this->lang"} ?>
 

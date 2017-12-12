@@ -19,6 +19,7 @@ use frontend\models\ContactForm;
 class SiteController extends Controller
 {
     public $layout = 'home';
+
     /**
      * @inheritdoc
      */
@@ -75,15 +76,17 @@ class SiteController extends Controller
     {
         return $this->render('index');
     }
-   public function actionContacts()
+
+    public function actionContacts()
     {
         $this->layout = 'full-width';
         return $this->render('contacts');
     }
 
-    public function actionTest() {
-
-        return true;
+    public function actionTest()
+    {
+        $this->layout = 'main';
+        return $this->render('test-cart');
     }
 
     /**

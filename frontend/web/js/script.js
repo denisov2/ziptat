@@ -193,6 +193,33 @@ $('.likeq').mouseover(function () {
     $(this).children('img').attr('src', '/img/icon/lovwh.png');
 });
 
+
+$('.likeq').on('click', like_label);
+$('.like').on('click', like_label);
+
+function like_label(e) {
+
+    var like_img = e.target;
+    var like_div = $(like_img).parent();
+
+    var product_id = like_div.data('product-id');
+    if(product_id == undefined) return;
+
+    $.ajax({
+        url: '/ru/ajax/like/?product_id=' + product_id,
+        success: function (data) {
+            console.log(data);
+
+            $('.popup-main.product-id-' + product_id + ' .like span').text(data.likes);
+            $('.popup-main.product-id-' + product_id + ' .likeq span').text(data.likes);
+        }
+    });
+
+
+    console.log(product_id);
+
+};
+
 $(window).on('load', function () {
     $('.wrapper').removeClass('loading').addClass('loaded');
 });
@@ -360,14 +387,18 @@ $('.women-tatu span').click(function () {
 $('.add-tatu span').click(function () {
     $(this).parent().remove();
 });
-$(".categoryy li span.arou").click(function (e) {
+
+
+$(".categoryy li span.arou.search-subcategory").click(function (e) {
     // random background for additional blocks
     var r = Math.round(Math.random() * 255 + 1),
         g = Math.round(Math.random() * 255 + 1),
         b = Math.round(Math.random() * 255 + 1);
 
+    var subcategory_id = $(this).data('subcategory-id');
+
     var name = $(this).parent('li').find('>span.arou').text();
-    $('.left-btn').prepend('<div style="opacity:0.8; background: rgb(' + r + ',' + g + ',' + b + ')" class="add-tatu">' + name + '<span><span class="skriva">Убрать из списка</span></span> </div>');
+    $('.left-btn').prepend('<div data-subcategory-id="' + subcategory_id + '" style="opacity:0.8; background: rgb(' + r + ',' + g + ',' + b + ')" class="add-tatu search-subcategory-item">' + name + '<span><span class="skriva">Убрать из списка</span></span> </div>');
 })
 
 
@@ -380,7 +411,7 @@ $("#kek1").keyup(function (event) {
             g = Math.round(Math.random() * 255 + 1),
             b = Math.round(Math.random() * 255 + 1);
         var name = $("#kek1").val();
-        $('.left-btn').prepend('<div style="opacity:0.8; background: rgb(' + r + ',' + g + ',' + b + ')" class="add-tatu">' + name + '<span><span class="skriva">Убрать из списка</span></span> </div>')
+        $('.left-btn').prepend('<div style="opacity:0.8; background: rgb(' + r + ',' + g + ',' + b + ')" class="add-tatu search-keyword-item">' + name + '<span><span class="skriva">Убрать из списка</span></span> </div>')
         $("#kek1").val();
     }
 })
@@ -394,10 +425,48 @@ $("#kek2").keyup(function (event) {
             g = Math.round(Math.random() * 255 + 1),
             b = Math.round(Math.random() * 255 + 1);
         var name = $("#kek2").val();
-        $('.left-btn').prepend('<div style="opacity:0.8; background: rgb(' + r + ',' + g + ',' + b + ')" class="add-tatu">' + name + '<span><span class="skriva">Убрать из списка</span></span> </div>')
+        $('.left-btn').prepend('<div style="opacity:0.8; background: rgb(' + r + ',' + g + ',' + b + ')" class="add-tatu search-keyword-item">' + name + '<span><span class="skriva">Убрать из списка</span></span> </div>')
         $("#kek2").val();
     }
 })
+
+
+$("#main_search").on('click', function () {
+
+    var keywords_array = [];
+    var subcategories_array = [];
+    var url_params_array = [];
+
+
+    $(".desktop-search.search .search-keyword-item").each(function (i, element) {
+        console.log(element.innerText);
+        var j = $(this);
+
+
+        keywords_array.push(element.innerText);
+    });
+
+    $(".desktop-search.search .search-subcategory-item").each(function (i, element) {
+        console.log(element.innerText);
+        var j = $(this);
+
+        subcategories_array.push($(this).data('subcategory-id'));
+
+    });
+
+    if (subcategories_array) url_params_array.push('subcategories-filter=' + subcategories_array.join(';'));
+
+    if (keywords_array) url_params_array.push('keywords=' + keywords_array.join(' '));
+
+    console.log(url_params_array);
+    url_base = 'http://ziptat.ga/ru/search/';
+
+
+    var final_redirect = url_base + '?' + url_params_array.join('&');
+    window.location.assign(final_redirect);
+
+
+});
 
 $(document).on('click', '.choose', function () {
 
@@ -420,6 +489,7 @@ $(document).on('click', '.pla', function () {
         plaInput.removeClass('error');
     }
 });
+
 
 $('body').on('change', '.color', function () {
     var val = $(this).val();

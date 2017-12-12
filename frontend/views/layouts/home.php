@@ -36,6 +36,15 @@ use \frontend\widgets\RegistrationPopup;
     <noscript>
         <meta http-equiv="refresh" content="0;url=http://verstka.integratic.ru/tatu-2/pagebrowser.html"/>
     </noscript>
+    <!-- JavaScript-->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/Dima-style.css">
+    <link rel="stylesheet" href="/css/dvizh-styles.css">
+
+
+    <link rel="shortcut icon" href="/img/favicon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="/css/jquery.fancybox.css">
+
 
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
@@ -95,22 +104,25 @@ use \frontend\widgets\RegistrationPopup;
         <?= $this->render('_footer') ?>
     </div>
 
-    <div id="loader"></div>
 
-    <!-- JavaScript-->
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/Dima-style.css">
-    <script src="/js/jquery-3.2.1.min.js"></script>
-    <script src="/js/owl.carousel.min.js"></script>
-    <script src="/js/jquery.fancybox.min.js"></script>
-    <script src="/js/script.js"></script>
-    <script src="/js/filter.js"></script>
+</div>
 
-    <link rel="shortcut icon" href="/img/favicon/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="/css/jquery.fancybox.css">
+<div id="loader"></div>
+
 
 
     <?php $this->endBody() ?>
+
+<script src="/js/jquery-3.2.1.min.js"></script>
+<script src="/js/owl.carousel.min.js"></script>
+<script src="/js/jquery.fancybox.min.js"></script>
+<script src="/js/script.js"></script>
+<script src="/js/filter.js"></script>
+<script src="/js/dvizh-scripts.js"></script>
+
+
+
+
 </body>
 </html>
 <?php $this->endPage() ?>

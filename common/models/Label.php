@@ -25,10 +25,11 @@ use yii\db\ActiveRecord;
  *
  * @property Subcategory $subcategory
  */
-class Label extends \yii\db\ActiveRecord
+class Label extends \yii\db\ActiveRecord implements \dvizh\cart\interfaces\CartElement
 {
 
     public $file_image;
+    public $lang;
 
     const ORIGINAL_FOLDER = 'original';
     const BIG_FOLDER = 'big';
@@ -47,6 +48,13 @@ class Label extends \yii\db\ActiveRecord
 
     const STATUS_IN_STOCK = 1;
     const STATUS_NOT_IN_STOCK = 2;
+
+    public function init() {
+
+        $this->lang = Yii::$app->language;
+        parent::init();
+
+    }
 
 
     /**
@@ -77,7 +85,6 @@ class Label extends \yii\db\ActiveRecord
             ],
         ];
     }
-
 
 
     /**
@@ -131,9 +138,9 @@ class Label extends \yii\db\ActiveRecord
 
         if (!empty ($this->file_image)) {
             if ($this->validate(['file_image'])) {
-                $this->file_image->saveAs(\Yii::getAlias('@labels') . '/'.self::ORIGINAL_FOLDER.'/' . $time . '_' . $this->file_image->baseName . '.' . $this->file_image->extension);
+                $this->file_image->saveAs(\Yii::getAlias('@labels') . '/' . self::ORIGINAL_FOLDER . '/' . $time . '_' . $this->file_image->baseName . '.' . $this->file_image->extension);
                 $this->image_original = $time . '_' . $this->file_image->baseName . '.' . $this->file_image->extension;
-               // var_dump($this->image_original); die();
+                // var_dump($this->image_original); die();
             }
         }
 
@@ -143,7 +150,7 @@ class Label extends \yii\db\ActiveRecord
     public function getImageUrl($type = self::ORIGINAL_FOLDER)
     {
 
-        return '/labels/' . $type .'/'. $this->image_original;
+        return '/labels/' . $type . '/' . $this->image_original;
     }
 
     public function getImagePath($type = self::ORIGINAL_FOLDER)
@@ -152,33 +159,70 @@ class Label extends \yii\db\ActiveRecord
 
     }
 
-    public function isImageExist($type = self::ORIGINAL_FOLDER) {
+    public function isImageExist($type = self::ORIGINAL_FOLDER)
+    {
 
         return file_exists($this->getImagePath($type));
 
     }
 
-    public function getImageInfo ($type = self::ORIGINAL_FOLDER)
+    public function getImageInfo($type = self::ORIGINAL_FOLDER)
     {
-        $result = "<p>" . Yii::t('common' , 'Image data: ')  . getimagesize($this->getImagePath($type)) [3] . ". ";
-        $result .= Yii::t('common' , 'Image size: ')  .  round(filesize($this->getImagePath($type)) / 1024 , 2 )  ." Kb.</p>";
+        $result = "<p>" . Yii::t('common', 'Image data: ') . getimagesize($this->getImagePath($type)) [3] . ". ";
+        $result .= Yii::t('common', 'Image size: ') . round(filesize($this->getImagePath($type)) / 1024, 2) . " Kb.</p>";
 
         return $result;
 
     }
 
-    public static function  getStatusesAsArray() {
+    public static function  getStatusesAsArray()
+    {
         return [
-            self::STATUS_IN_STOCK => Yii::t('common' , 'In stock'),
-            self::STATUS_NOT_IN_STOCK => Yii::t('common' , 'Not in stock'),
+            self::STATUS_IN_STOCK => Yii::t('common', 'In stock'),
+            self::STATUS_NOT_IN_STOCK => Yii::t('common', 'Not in stock'),
         ];
     }
 
-    public function getStatus() {
+    public function getStatus()
+    {
 
         return isset(self::getStatusesAsArray()[$this->status]) ? $this->getStatusesAsArray()[$this->status] : false;
 
     }
+
+    public function getCartId()
+    {
+        return $this->id;
+    }
+
+    public function getCartName()
+    {
+
+        return $this->{"name_$this->lang"};
+    }
+
+    public function getCartPrice()
+    {
+       
+        return 3;
+       // return $this->price;
+    }
+
+    //Опции продукта для выбора при добавлении в корзину
+    public function getCartOptions()
+    {
+        return [
+            '1' => [
+                'name' => 'Цвет',
+                'variants' => ['1' => 'Красный', '2' => 'Белый', '3' => 'Синий'],
+            ],
+            '2' => [
+                'name' => 'Размер',
+                'variants' => ['4' => 'XL', '5' => 'XS', '6' => 'XXL'],
+            ]
+        ];
+    }
+    //..
 
 
 }
